@@ -68,8 +68,7 @@ columns:
             label: info
             theme: negative
             text: |
-              Dear Organisation,
-              blabla
+              Password Reset Info
           passwordresetkey:
             type: toggle
             default: false
@@ -88,29 +87,54 @@ columns:
         label: info
         theme: positive
         text: |
-          (Optional)
-          Dear Organisation,
+          Name der Organisation oder des Projekts
+      organame:
+        label: Name der Organisation
+        type: text
+        minlength: 3
+        maxlength: 100
+        help: Min.3 Max.100
+      aboutorga:
+        label: Beschreibung
+        type: textarea
+      lokalorga:
+        label: Keine Verortung
+        type: toggle
+        default: false
+        help: ich wünsche keine Verortung
       location: # locator plugin
         type: locator
         help: (Optional Data)
+        when:
+          lokalorga: false
       street:
         label: Street
         type: text
         help: (Optional Data)
+        width: 2/3
+        when:
+          lokalorga: false
       zip:
         label: ZIP
         type: text
-        width: 1/4
+        width: 1/3
         help: (Optional Data)
+        when:
+          lokalorga: false
       city:
         label: City
         type: text
-        width: 3/4
+        width: 1/2
         help: (Optional Data)
+        when:
+          lokalorga: false
       country:
         label: Country
+        width: 1/2
         type: text
         help: (Optional Data)
+        when:
+          lokalorga: false
 
 
   right:
@@ -128,12 +152,7 @@ columns:
         label: Website
         type: url
         help: (Optional Data)
-      organame:
-        label: Name
-        type: text
-        icon: title
-        placeholder: Organisation name
-        help: (Optional Data)
+
 
 
 
