@@ -122,19 +122,25 @@ columns:
         when:
           lokalorga: false
       city:
-        label: City
+        label: Stadt
         type: text
         width: 1/2
         help: (Optional Data)
         when:
           lokalorga: false
-      country:
-        label: Country
+      bundesland:
+        label: Bundesland
         width: 1/2
-        type: text
+        type: select
         help: (Optional Data)
         when:
           lokalorga: false
+        options:
+          hamburg: Hamburg
+          bremen: Bremen
+          berlin: Berlin
+          bayern: Bayern
+          schleswig: Schleswig-Hostein
 
 
   right:
@@ -145,13 +151,125 @@ columns:
         label: info
         theme: positive
         text: |
-          (Mandatory)
-          Dear Organisation,
-          We recommend that you provide this information. If this data is not available, you will not be able to find your data on our website.
+          Kontakt
+      email:
+        label: Email
+        type: email
+      contactnummber:
+        label: Telefonnummer
+        type: tel
+        help: (Optional Data)
+      commentforcontact:
+        label: Kommentar zum Kontakt
+        type: text
       website:
         label: Website
         type: url
-        help: (Optional Data)
+      social:
+        label: Social Media link
+        type: structure
+        fields:
+          medianame:
+            label: Title
+            type: text
+          mediasocial:
+            label: Link
+            type: link
+  bottom:
+    width: 1/1
+    fields:
+      info4:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          Verschlagwortung
+      themenschwerpunkt:
+        label: Themenschwerpunkt
+        type: select
+        width: 1/2
+        options:
+          xx: xx
+          yy: yy
+          zz: zz
+      artderorganisation:
+        label: Art der Organisation
+        type: select
+        width: 1/2
+        options:
+          xx: xx
+          yy: yy
+          zz: zz
+      zielgruppe:
+        label: Zielgruppe
+        type: select
+        width: 1/2
+        options:
+          xx: xx
+          yy: yy
+          zz: zz
+      onlineresourcen:
+        label: Online-Resourcen
+        type: select
+        width: 1/2
+        options:
+          xx: xx
+          yy: yy
+          zz: zz
+      sprachunterstutzung:
+        label: Sprachunterstützung
+        type: select
+        width: 1/2
+        options:
+          xx: xx
+          yy: yy
+          zz: zz
+      aktivitaten:
+        label: Aktivitäten
+        type: select
+        width: 1/2
+        options:
+          xx: xx
+          yy: yy
+          zz: zz
+      tags:
+        label: Tags
+        type: tags
+        width: 1/2
+        fields:
+          tagname:
+            type: text
+      tagpool:
+        type: multiselect
+        width: 1/2
+        options:
+          type: query
+          query: kirby.users.pluck("tags", ",", true)
+          # query: site.tags.toStructure.pluck("tagname", ",", true)
+
+      archivoraktiv:
+        label: Archiv oder Aktiv
+        type: radio
+        width: 1/2
+        options:
+          aktive: Aktive
+          archiv: Archiv
+
+      geltungsbereich:
+        label: Geltungsbereich
+        type: radio
+        width: 1/2
+        options:
+          lokal: Lokal
+          kommunal: Kommunal
+          national: National
+          international: International
+
+
+
+
+
+
 
 
 

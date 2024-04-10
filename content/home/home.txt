@@ -18,6 +18,19 @@ Alluser: - user://B1TTXVqM
 
 ----
 
+Tags:
+
+- 
+  tagname: asdf
+- 
+  tagname: sdfadslkfjl
+
+----
+
+Tagpool: 
+
+----
+
 Name: Test
 
 ----
