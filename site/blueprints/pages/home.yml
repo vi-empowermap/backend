@@ -1,0 +1,21 @@
+title: Home
+
+
+columns:
+  info:
+    width: 1/2
+    sections:
+      info:
+        type: fields
+        fields:
+          hometitle:
+            type: text
+          text:
+            type: textarea
+          url:
+            type: url
+          alluser:
+            type: users
+
+
+

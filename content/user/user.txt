@@ -1,0 +1,33 @@
+Title: user
+
+----
+
+Titlename: User Page
+
+----
+
+Createuserbtn: Create User
+
+----
+
+Errormessage1: 
+
+----
+
+Loginbtn: 
+
+----
+
+Errormessage2: 
+
+----
+
+Finduseridbtn: 
+
+----
+
+Errormessage3: 
+
+----
+
+Uuid: 4d1X4mOvDoqI7VF5

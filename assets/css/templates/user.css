@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: "#ececec";
+}
+
+.user_container{
+  width: 100vw;
+  height: 100vh;
+  background-color: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.user_wrapper {
+  width: 600px;
+  height: fit-content;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.user_form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.user_input {
+  width: 100%;
+  padding: 10px;
+  height: 40px;
+  border-radius: 10px;
+  border: 0px;
+  font-size: 14px;
+
+}
+.user_text {
+
+  background: rgb(240,240,240);
+}
+
+
+.user_createuser_btn {
+  background-color: orange;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+.userlogin_wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  gap: 10px;
+  border-top: 1px solid gray;
+  padding: 10px 0px;
+}
+
+.user_login{
+  background-color: greenyellow;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+.user_password{
+  background-color: crimson;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Password Forgot */
+
+.password_wrapper{
+  width: 600px;
+  height: fit-content;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  display: none;
+
+}
