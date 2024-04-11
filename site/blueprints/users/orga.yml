@@ -232,19 +232,21 @@ columns:
           xx: xx
           yy: yy
           zz: zz
-      tags:
-        label: Tags
-        type: tags
-        width: 1/2
-        fields:
-          tagname:
-            type: text
+
       tagpool:
+        label: Tags
         type: multiselect
         width: 1/2
         options:
           type: query
           query: kirby.users.pluck("tags", ",", true)
+      tags:
+        label: Create new tags
+        type: tags
+        width: 1/2
+        fields:
+          tagname:
+            type: text
           # query: site.tags.toStructure.pluck("tagname", ",", true)
 
       archivoraktiv:
