@@ -2,11 +2,11 @@ Title: user
 
 ----
 
-Titlename: User Page
+Titlename: Sign Up
 
 ----
 
-Createuserbtn: Create User
+Createuserbtn: Sign Up
 
 ----
 
@@ -14,7 +14,11 @@ Errormessage1:
 
 ----
 
-Loginbtn: 
+Loginbtn2: Already Signed up?
+
+----
+
+Loginbtn: Log In
 
 ----
 
@@ -22,11 +26,15 @@ Errormessage2:
 
 ----
 
-Finduseridbtn: 
+Forgetpasswordbtn: Forget Password?
 
 ----
 
 Errormessage3: 
+
+----
+
+Finduseridbtn: Forget Password?
 
 ----
 
