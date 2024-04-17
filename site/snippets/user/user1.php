@@ -94,75 +94,91 @@
 
   const onHandleSubmitP = async (e) => {
     e.preventDefault()
-    try{
+    try {
       const bodyData = {
-          select: {
-            
-          }
-        }
-      const res = await fetch(`/api/users`, {
-          method: "GET",
-          headers: {
-            "Authorization": headerAuthString,
-            "Content-Type": "application/json",
-          },
-        
+        select: {
 
-        });
+        }
+      }
+      const res = await fetch(`/api/users`, {
+        method: "GET",
+        headers: {
+          "Authorization": headerAuthString,
+          "Content-Type": "application/json",
+        },
+
+
+      });
       const userList = await res.json();
 
-  
+
       // check the email is exist.
-      const foundUser = userList.data.find((v) => v.email === fUserEmail.value) 
+      const foundUser = userList.data.find((v) => v.email === fUserEmail.value)
       console.log(foundUser)
       // if not exist
-      if(!Boolean(foundUser)){
+      if (!Boolean(foundUser)) {
         console.log("wrong email")
         // show error message
 
-      }else{
+      } else {
         // password question01 
-      const res2 = await fetch(`/api/users/${foundUser.id}`, {
+        const res2 = await fetch(`/api/users/${foundUser.id}`, {
           method: "GET",
           headers: {
             "Authorization": headerAuthString,
             "Content-Type": "application/json",
           },
         });
-      const findUser = await res2.json();
-      console.log(findUser)
-      console.log(pQuestion.value)
+        const findUser = await res2.json();
+        console.log(findUser)
+        console.log(pQuestion.value)
 
-        
-      // compare your answer and user answoer
-      if(findUser.data.content.infopassword === pQuestion.value){
-        console.log("YEah")
-        passwordWraapper.style.display = "none"
-        resetWraapper.style.display = "block"
 
-        const resetForm = document.querySelector("#resetForm");
-        const r_password = document.querySelector("#r_password");
-        const r_password2 = document.querySelector("#r_password2");
-        const onHandleResetSubmit = (e) => {
-          e.preventDefault();
-          if(r_password.value === r_password2.value){
-            // reset
-            console.log("dddreset")
-          }else{
-            // confirmation went wrong
-            console.log("check password")
+        // compare your answer and user answoer
+        if (findUser.data.content.infopassword === pQuestion.value) {
+          console.log("YEah")
+          passwordWraapper.style.display = "none"
+          resetWraapper.style.display = "block"
+
+          const resetForm = document.querySelector("#resetForm");
+          const r_password = document.querySelector("#r_password");
+          const r_password2 = document.querySelector("#r_password2");
+          const onHandleResetSubmit = async (e) => {
+            e.preventDefault();
+            if (r_password.value === r_password2.value) {
+              // reset
+              console.log("dddreset")
+              console.log(r_password.value)
+              console.log(findUser.data.id)
+              console.log(findUser.data.email)
+              const passwordData = {
+                password: r_password.value
+              }
+              const res3 = await fetch(`/api/users/${findUser.data.id}/password`, {
+                method: "PATCH",
+                headers: {
+                  "Authorization": headerAuthString,
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(passwordData)
+              });
+              const resetPasswordStatus = await res3.json();
+              console.log(resetPasswordStatus)
+            } else {
+              // confirmation went wrong
+              console.log("check password")
+            }
+
           }
-
+          resetForm.addEventListener("submit", onHandleResetSubmit)
+        } else {
+          // wrong answer
         }
-        resetForm.addEventListener("submit", onHandleResetSubmit)
-      }else{
-        // wrong answer
-      }
       }
 
 
 
-    }catch(error){
+    } catch (error) {
       console.log("error")
     }
   }
