@@ -6,11 +6,15 @@ Titlename: Sign Up
 
 ----
 
-Createuserbtn: Sign Up
+Forgetpagename: Forget Password
 
 ----
 
-Errormessage1: 
+Resetpagename: Reset Password
+
+----
+
+Createuserbtn: Sign Up
 
 ----
 
@@ -19,10 +23,6 @@ Loginbtn2: Already Signed up?
 ----
 
 Loginbtn: Log In
-
-----
-
-Errormessage2: 
 
 ----
 
@@ -35,6 +35,18 @@ Forgetpasswordbtn: Forget Password?
 ----
 
 Forgetpasswordbtn3: Submit
+
+----
+
+Resetbtn: Reset
+
+----
+
+Errormessage1: 
+
+----
+
+Errormessage2: 
 
 ----
 

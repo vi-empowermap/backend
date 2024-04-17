@@ -6,7 +6,18 @@ columns:
     width: 1/1
     fields:
       titlename:
-        label: page title
+        width: 1/2
+        label: Sign-up Page Title
+        type: text
+        required: true
+      forgetpagename:
+        width: 1/2
+        label: Forget Page Title
+        type: text
+        required: true
+      resetpagename:
+        width: 1/2
+        label: Reset Password Page Title
         type: text
         required: true
 
@@ -15,9 +26,6 @@ columns:
     fields:
       createuserbtn:
         label: Create User Button Text
-        type: text
-      errormessage1:
-        label: Error Message = If the user email is already taken
         type: text
 
   middle:
@@ -29,9 +37,7 @@ columns:
       loginbtn:
         label: Log In Button Text
         type: text
-      errormessage2:
-        label: Error Message = If the user email/password is wrong
-        type: text
+
   right:
     width: 1/3
     fields:
@@ -44,6 +50,27 @@ columns:
       forgetpasswordbtn3:
         label: Submit Btn Text
         type: text
-      errormessage3:
-        label: Error Message = If the user email/password is not exist
+  leftbottom:
+    width: 1/3
+    fields:
+      resetbtn:
+        label: Reset Btn Text
         type: text
+
+  Bottom:
+    width: 1/1
+    fields:
+      errormessage1:
+        width: 1/2
+        label: error message1
+        type: text
+      errormessage2:
+        width: 1/2
+        label: error message2
+        type: text
+      errormessage3:
+        width: 1/2
+        label: error message3
+        type: text
+
+

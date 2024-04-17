@@ -4,6 +4,7 @@
   const FPBtn = document.querySelector(".user_password")
   const userWraapper = document.querySelector(".user_wrapper")
   const passwordWraapper = document.querySelector(".password_wrapper")
+  const resetWraapper = document.querySelector(".reset_wrapper")
   const createUserBtn = document.querySelector("#createUserBtn")
 
   FPBtn.addEventListener("click", () => {
@@ -134,8 +135,29 @@
 
         
       // compare your answer and user answoer
-      if(findUser.data.content.infopassword === pQuestion.value)
-      console.log("YEah")
+      if(findUser.data.content.infopassword === pQuestion.value){
+        console.log("YEah")
+        passwordWraapper.style.display = "none"
+        resetWraapper.style.display = "block"
+
+        const resetForm = document.querySelector("#resetForm");
+        const r_password = document.querySelector("#r_password");
+        const r_password2 = document.querySelector("#r_password2");
+        const onHandleResetSubmit = (e) => {
+          e.preventDefault();
+          if(r_password.value === r_password2.value){
+            // reset
+            console.log("dddreset")
+          }else{
+            // confirmation went wrong
+            console.log("check password")
+          }
+
+        }
+        resetForm.addEventListener("submit", onHandleResetSubmit)
+      }else{
+        // wrong answer
+      }
       }
 
 

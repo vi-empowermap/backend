@@ -128,3 +128,13 @@ body {
 }
 
 
+
+/* Reset page */
+.reset_wrapper{
+  width: 600px;
+  height: fit-content;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  display: none;
+}

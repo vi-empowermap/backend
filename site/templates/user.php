@@ -7,14 +7,13 @@
     <div>
       <form id="createForm" class="user_form">
         <div>
-
           <input id="userEmail" class="user_input user_text" type="email" name="email" placeholder="Email" />
         </div>
         <div>
-          <input id="userPassword" class="user_input user_text" type="password" name="password" placeholder="Password" />
+          <input id="userPassword" class="user_input user_text" minlength="8" type="password" name="password" placeholder="Password" />
         </div>
         <div>
-          <input id="userPasswordC" class="user_input user_text" type="password" name="password2" placeholder="Confirm Password" />
+          <input id="userPasswordC" class="user_input user_text" minlength="8" type="password" name="password2" placeholder="Confirm Password" />
           <div id="passwordErrorM" class="error_message"></div>
         </div>
         <button class="user_input user_createuser_btn"><?= $page->createuserbtn() ?></button>
@@ -31,7 +30,7 @@
     </div>
   </div>
   <div class="password_wrapper">
-    <div class="title">Forgot Password</div>
+    <div class="title"><?= $page->forgetpagename() ?></div>
     <div>
       <form id="forgotPasswordForm" class="user_form">
         <input id="fUserEmail" class="user_input user_text" type="email" name="email" placeholder="Email" />
@@ -41,6 +40,22 @@
       <div class="user_login">
         <div id="createUserBtn" class="user_btn">&larr; <?= $page->createuserbtn() ?></div>
       </div>
+    </div>
+  </div>
+  <div class="reset_wrapper">
+    <div class="title"><?= $page->resetpagename() ?></div>
+    <div>
+      <form id="resetForm" class="user_form">
+        <div>
+          <input id="r_password" class="user_input user_text" minlength="8" type="password" name="password" placeholder="Password" />
+        </div>
+        <div>
+          <input id="r_password2" class="user_input user_text" minlength="8" type="password" name="password2" placeholder="Confirm Password" />
+          <div id="" class="error_message"></div>
+        </div>
+        <button class="user_input user_createuser_btn"><?= $page->resetbtn() ?></button>
+      </form>
+      
     </div>
   </div>
 </div>
