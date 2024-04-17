@@ -4,10 +4,10 @@
     <div class="title"><?= $page->titlename() ?></div>
     <div>
       <div><?= $page->createuserbtn() ?></div>
-      <form class="user_form">
-        <input class="user_input user_text" type="email" name="email" placeholder="email" />
-        <input class="user_input user_text" type="password" name="password" placeholder="password" />
-        <input class="user_input user_createuser_btn" type="submit" value="Create User" />
+      <form id="createForm" class="user_form">
+        <input id="userEmail" class="user_input user_text" type="email" name="email" placeholder="email" />
+        <input id="userPassword" class="user_input user_text" type="password" name="password" placeholder="password" />
+        <button class="user_input user_createuser_btn">Butotn</button>
       </form>
       <div class="userlogin_wrapper">
         <a href="<?= $site->url() ?>/panel" class="user_input user_login">Log In</a>
