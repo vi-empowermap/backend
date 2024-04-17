@@ -1,6 +1,6 @@
 # System files
 # ------------
-
+.env
 Icon
 .DS_Store
 

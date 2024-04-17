@@ -50,10 +50,19 @@ body {
   font-size: 14px;
 
 }
+
+.user_btn {
+  background-color: bisque;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+}
 .user_text {
 
   background: rgb(240,240,240);
 }
+
+
 
 
 .user_createuser_btn {
@@ -98,4 +107,11 @@ body {
   border-radius: 20px;
   display: none;
 
+}
+
+.error_message{
+  font-size: 13px;
+  color: red;
+  padding: 0 10px;
+  display: none;
 }

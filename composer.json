@@ -27,7 +27,8 @@
     "getkirby/kql": "^2.1",
     "sylvainjule/backups": "^1.0",
     "getkirby/cli": "^1.4",
-    "bnomei/kirby3-janitor": "^4.0"
+    "bnomei/kirby3-janitor": "^4.0",
+    "beebmx/kirby-env": "^4.2"
   },
   "config": {
     "allow-plugins": {

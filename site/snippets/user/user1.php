@@ -4,6 +4,8 @@
   const FPBtn = document.querySelector(".user_password")
   const userWraapper = document.querySelector(".user_wrapper")
   const passwordWraapper = document.querySelector(".password_wrapper")
+  const createUserBtn = document.querySelector("#createUserBtn")
+
   FPBtn.addEventListener("click", () => {
     readyPasswordForgot = true
     if (readyPasswordForgot) {
@@ -12,43 +14,135 @@
     }
   })
 
+  createUserBtn.addEventListener("click", () => {
+    readyPasswordForgot = false
+    if (!readyPasswordForgot) {
+      userWraapper.style.display = "block"
+      passwordWraapper.style.display = "none"
+    }
+  })
+
   // Create User 
   const createForm = document.querySelector("#createForm");
+  const forgotPasswordForm = document.querySelector("#forgotPasswordForm");
   const userEmail = document.querySelector("#userEmail")
+  const fUserEmail = document.querySelector("#fUserEmail")
   const userPassword = document.querySelector("#userPassword")
-  const onHandleSubmit = async (e) => {
-    e.preventDefault()
-    // 01.check if the Email is already taken.
-    console.log(userEmail.value)
-    console.log(userPassword.value)
+  const userPassword2 = document.querySelector("#userPasswordC")
+  const passwordErrorM = document.querySelector("#passwordErrorM")
 
-    try{
-      const userInfo = {
-        authEmail: "zndgn555@gmail.com",
-        authPassword: "123123123"
-      }
-      const encodedAuthString = btoa(`${userInfo.authEmail}:${userInfo.authPassword}`);
-      const headerAuthString = `Basic ${encodedAuthString}`;
-      const csrf = "<?= csrf() ?>";
-      const res = await fetch("/api/site", {
-        method: "GET",
-        headers: {
-            "X-CSRF" : csrf,
-            "Authorization": headerAuthString
-          }
-      });
-      const jsonData = await res.json();
-      console.log(jsonData)
-    }catch(error){
-      console.log("error Message", error)
-    }
-
+  const onFocus = () => {
+    passwordErrorM.style.display = "none"
+    passwordErrorM.innerHTML = ""
   }
 
+  userEmail.addEventListener("focus", onFocus)
+  userPassword.addEventListener("focus", onFocus)
+  userPassword2.addEventListener("focus", onFocus)
 
+  const userInfo = {
+    authEmail: "<?= $page->env("USEREMAIL") ?>",
+    authPassword: "<?= $page->env("USERPASSWORD") ?>"
+  }
+  const encodedAuthString = btoa(`${userInfo.authEmail}:${userInfo.authPassword}`);
+  const headerAuthString = `Basic ${encodedAuthString}`;
+
+  const onHandleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(userEmail.value)
+    console.log(userPassword.value)
+    try {
+      if (userPassword.value === userPassword2.value) {
+        const bodyData = {
+          email: userEmail.value,
+          password: userPassword.value,
+          role: "Orga",
+          language: "en"
+        }
+        const res = await fetch(`/api/users`, {
+          method: "POST",
+          headers: {
+            "Authorization": headerAuthString,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bodyData)
+        });
+
+        const jsonData = await res.json();
+        if (jsonData.status === "error") {
+          // 01.check if the Email is already taken, or password 
+          console.log(jsonData.message)
+        } else {
+          // 02. If not then create a User and then redirect to Panel.
+
+          console.log(jsonData)
+          const redirecting = "<?= $site->url() ?>/panel"
+          window.location.href = redirecting
+        }
+      } else {
+        // password confirmation doesn't work
+        console.log("check password")
+        passwordErrorM.style.display = "block"
+        passwordErrorM.innerHTML = "password blabla"
+      }
+    } catch (error) {
+      console.log("error Message", error)
+    }
+  }
   createForm.addEventListener("submit", onHandleSubmit)
 
-  // 02. If not then create a User and then redirect to Panel.
+  const onHandleSubmitP = async (e) => {
+    e.preventDefault()
+    try{
+      const bodyData = {
+          select: {
+            
+          }
+        }
+      const res = await fetch(`/api/users`, {
+          method: "GET",
+          headers: {
+            "Authorization": headerAuthString,
+            "Content-Type": "application/json",
+          },
+        
 
-  // 03. If the Email is already taken then send an error message.
+        });
+      const userList = await res.json();
+
+  
+      // check the email is exist.
+      const foundUser = userList.data.find((v) => v.email === fUserEmail.value) 
+      console.log(foundUser)
+      // if not exist
+      if(!Boolean(foundUser)){
+        console.log("wrong email")
+        // show error message
+
+      }else{
+        // password question01 
+      const res2 = await fetch(`/api/users/${foundUser.id}`, {
+          method: "GET",
+          headers: {
+            "Authorization": headerAuthString,
+            "Content-Type": "application/json",
+          },
+        });
+      const findUser = await res2.json();
+      console.log(findUser)
+      console.log(pQuestion.value)
+
+        
+      // compare your answer and user answoer
+      if(findUser.data.content.infopassword === pQuestion.value)
+      console.log("YEah")
+      }
+
+
+
+    }catch(error){
+      console.log("error")
+    }
+  }
+  forgotPasswordForm.addEventListener("submit", onHandleSubmitP)
 </script>
