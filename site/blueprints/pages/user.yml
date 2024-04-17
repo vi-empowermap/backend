@@ -41,6 +41,9 @@ columns:
       forgetpasswordbtn:
         label: Forget Password Button
         type: text
+      forgetpasswordbtn3:
+        label: Submit Btn Text
+        type: text
       errormessage3:
         label: Error Message = If the user email/password is not exist
         type: text
