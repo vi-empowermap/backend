@@ -5,6 +5,12 @@ columns:
   top:
     width: 1/1
     fields:
+      info2:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          Title Text
       titlename:
         width: 1/2
         label: Sign-up Page Title
@@ -20,6 +26,14 @@ columns:
         label: Reset Password Page Title
         type: text
         required: true
+  gap:
+    fields:
+      info3:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          Button Text
 
   left:
     width: 1/3
@@ -60,17 +74,31 @@ columns:
   Bottom:
     width: 1/1
     fields:
-      errormessage1:
-        width: 1/2
-        label: error message1
+      info:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          Error Messages for sign-up, reset password and forget password
+      passwordconfirmation:
         type: text
-      errormessage2:
+        label: Password Confirmation
         width: 1/2
-        label: error message2
+      notexistemail:
         type: text
-      errormessage3:
+        label: This email is not exist
         width: 1/2
-        label: error message3
+      existemail:
         type: text
+        label: This email is already taken
+        width: 1/2
+      wronganswer:
+        type: text
+        label: Wrong Answer
+        width: 1/2
+      globalerror:
+        type: text
+        label: Global Error
+        width: 1/2
 
 

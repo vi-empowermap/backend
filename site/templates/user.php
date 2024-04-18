@@ -8,6 +8,7 @@
       <form id="createForm" class="user_form">
         <div>
           <input id="userEmail" class="user_input user_text" type="email" name="email" placeholder="Email" />
+          <div id="userEmailErrorM" class="error_message"></div>
         </div>
         <div>
           <input id="userPassword" class="user_input user_text" minlength="8" type="password" name="password" placeholder="Password" />
@@ -33,8 +34,14 @@
     <div class="title"><?= $page->forgetpagename() ?></div>
     <div>
       <form id="forgotPasswordForm" class="user_form">
-        <input id="fUserEmail" class="user_input user_text" type="email" name="email" placeholder="Email" />
-        <input id="pQuestion" class="user_input user_text" type="text" name="question" placeholder="Answer" />
+        <div>
+          <input id="fUserEmail" class="user_input user_text" type="email" name="email" placeholder="Email" />
+          <div id="fUserEmailErrorM" class="error_message"></div>
+        </div>
+        <div>
+          <input id="pQuestion" class="user_input user_text" type="text" name="question" placeholder="Answer" />
+          <div id="pQuestionErrorM" class="error_message"></div>
+        </div>
         <button class="user_input user_createuser_btn"><?= $page->forgetpasswordbtn3() ?></button>
       </form>
       <div class="user_login">
@@ -51,7 +58,7 @@
         </div>
         <div>
           <input id="r_password2" class="user_input user_text" minlength="8" type="password" name="password2" placeholder="Confirm Password" />
-          <div id="" class="error_message"></div>
+          <div id="r_password2ErrorM" class="error_message"></div>
         </div>
         <button class="user_input user_createuser_btn"><?= $page->resetbtn() ?></button>
       </form>

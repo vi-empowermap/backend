@@ -6,13 +6,9 @@ sections:
   info:
     type: fields
     fields:
-      tags:
-        label: Tags
-        type: structure
-        width: 1/2
-        fields:
-          tagname:
-            type: text
+
+
+
 
 
 

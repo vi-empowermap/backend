@@ -2,6 +2,26 @@ Title: Site Title
 
 ----
 
+Passwordconfirmation: Password Confirmation doesn't match
+
+----
+
+Notexistemail: This email is not exist
+
+----
+
+Existemail: This email is already taken
+
+----
+
+Wronganswer: Wrong Answer
+
+----
+
+Globalerror: Oops! Something went wrong. 🛠 Please refresh your browser.
+
+----
+
 Tags:
 
 - 
