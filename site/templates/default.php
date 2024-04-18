@@ -6,8 +6,8 @@
   <title>Document</title>
 </head>
 <body>
-<h1><?= $page->title() ?></h1>
-<h1><?= $page->hometitle() ?></h1>
 
+
+<?php snippet("homet")?>
 </body>
 </html>
