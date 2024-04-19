@@ -2,6 +2,26 @@ Title: Site Title
 
 ----
 
+Signupon: false
+
+----
+
+Randomcode: sein
+
+----
+
+Limitcount: 5
+
+----
+
+Infototalcount: 5
+
+----
+
+Ttttt: sdfadsfdsafas
+
+----
+
 Passwordconfirmation: Password Confirmation doesn't match
 
 ----
@@ -44,3 +64,7 @@ Tagname:
 ----
 
 Tagpool: 
+
+----
+
+Dd: 1ttt

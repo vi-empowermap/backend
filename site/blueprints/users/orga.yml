@@ -63,6 +63,10 @@ columns:
       fields:
         type: fields
         fields:
+          keyinfo:
+            label: secret key
+            type: text
+            disabled: true
           publicbtn:
             label: Public
             type: toggle

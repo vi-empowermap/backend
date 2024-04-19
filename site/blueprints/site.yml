@@ -11,28 +11,32 @@ sections:
         label: Sign-Up page
         default: false
         type: toggle
+        help: Active Sign-Up
       randomcode:
         width: 1/4
-        label: Random Code for Sign-Up
+        label: A Secret Key for Sign Up
         type: text
         required: true
         when:
           signupon: true
+        help: Create a Secret key as you wish. Alternatively, you can copy a random key from https://randomkeygen.com/
       limitcount:
         width: 1/4
-        label: Total Count
+        label: Total users who can sign up using the current secret key.
         type: number
         required: true
         when:
           signupon: true
+        help:
       infototalcount:
         width: 1/4
-        label: Currnt Count
-        type: info
-        text: 0 user
-        theme: positive
+        label: Current users who signed up with the current secret key
+        type: number
+        default: 0
+        help: Don't change anything here; it will update automatically. Even if you have already made changes, Just let it
         when:
           signupon: true
+
 
 
 

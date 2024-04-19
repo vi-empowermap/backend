@@ -46,6 +46,7 @@
   const forgotPasswordForm = document.querySelector("#forgotPasswordForm");
 
   /* Sign-Up Page */
+  const secretKey = document.querySelector("#secretKey");
   const userEmail = document.querySelector("#userEmail")
   const userPassword = document.querySelector("#userPassword")
   const userPassword2 = document.querySelector("#userPasswordC")
@@ -60,6 +61,7 @@
 
   /* Error Messages */
   // sign-up
+  const secretKeyErrorM = document.querySelector("#secretKeyErrorM")
   const userEmailErrorM = document.querySelector("#userEmailErrorM")
   const passwordErrorM = document.querySelector("#passwordErrorM")
   // forget password
@@ -71,6 +73,8 @@
 
   /* Sign up page close Errormessage */
   const onFocus = () => {
+    secretKeyErrorM.style.display = "none"
+    secretKeyErrorM.innerHTML = ""
     userEmailErrorM.style.display = "none"
     userEmailErrorM.innerHTML = ""
     passwordErrorM.style.display = "none"
@@ -83,6 +87,7 @@
     r_password2ErrorM.innerHTML = ""
 
   }
+  secretKey.addEventListener("focus", onFocus)
   userEmail.addEventListener("focus", onFocus)
   userPassword.addEventListener("focus", onFocus)
   userPassword2.addEventListener("focus", onFocus)
@@ -91,44 +96,148 @@
   r_password.addEventListener("focus", onFocus)
   r_password2.addEventListener("focus", onFocus)
 
-  /* Forget Password Page close Errormessage */
+
 
 
   // ------------------------------------------------------------------------------------------------
+  /* Check SignUpage Disabled and update */
+  const updateSignUpPage = async (end=false) => {
+    try {
+      const signPBtn = document.querySelector("#signPBtn")
+      const disabled_message = document.querySelector("#disabled_message")
 
+      const res = await fetch(`/api/site`, {
+        method: "GET",
+        headers: {
+          "Authorization": headerAuthString,
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+
+      console.log(data)
+      if (data.status === "ok") {
+        if (data.data.content.signupon) {
+          signPBtn.disabled = false;
+          disabled_message.style.block = "none"
+
+          const resUsers = await fetch(`/api/users?select=content,role`, {
+            method: "GET",
+            headers: {
+              "Authorization": headerAuthString,
+              "Content-Type": "application/json",
+            },
+          });
+          const usersList = await resUsers.json();
+          const currentOgaCounts = usersList.data.filter((v) => v.role.name === "orga")
+          console.log(currentOgaCounts)
+          const currentKeyOraCounts = currentOgaCounts.filter((v) => v.content.secret_key ===
+            data.data.content.randomcode)
+          console.log(currentKeyOraCounts)
+
+
+
+          // update current length 
+          const bodyData = {
+            infototalcount: currentKeyOraCounts.length,
+          }
+          const updateSite = await fetch(`/api/site`, {
+            method: "PATCH",
+            headers: {
+              "Authorization": headerAuthString,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bodyData)
+          });
+
+          // if already voll then disabled again 
+          if (currentKeyOraCounts.length >= data.data.content.limitcount) {
+            if(!end){
+              signPBtn.disabled = true;
+              disabled_message.style.display = "block"
+              disabled_message.innerText = "Sorry. Voll."
+            }
+
+          } else {
+            signPBtn.disabled = false;
+            disabled_message.style.block = "none"
+          }
+        } else {
+          // show message
+          signPBtn.disabled = true;
+          disabled_message.style.display = "block"
+          disabled_message.innerText = "Sorry. You can't create an account now."
+
+        }
+      }
+
+      return data;
+    } catch (error) {
+      window.alert(errorMessageList.globalError)
+    }
+
+  }
+  updateSignUpPage()
+
+
+  /* SignUp Page */
   const onHandleSubmit = async (e) => {
     e.preventDefault()
 
     try {
+      // ⭐️ check site toggle first
+      // ⭐️ update current count for site page and save current users count
+      // ⭐️ change user info to secret key 
+      // ⭐️ update again current count
+
+      const sitedata = await updateSignUpPage()
+      console.log(sitedata)
+
+
+
       // Check Password Confirmation
       if (userPassword.value === userPassword2.value) {
-        // Get Users
-        const bodyData = {
-          email: userEmail.value,
-          password: userPassword.value,
-          role: "Orga",
-          language: "en"
-        }
-        const res = await fetch(`/api/users`, {
-          method: "POST",
-          headers: {
-            "Authorization": headerAuthString,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(bodyData)
+        if (secretKey.value === sitedata.data.content.randomcode) {
+          // Get Users
+          const bodyData = {
+            email: userEmail.value,
+            password: userPassword.value,
+            role: "Orga",
+            language: "en",
+            content: {
+              secret_key: sitedata.data.content.randomcode
+            }
 
-        });
+          }
+          const res = await fetch(`/api/users`, {
+            method: "POST",
+            headers: {
+              "Authorization": headerAuthString,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(bodyData)
 
-        const jsonData = await res.json();
-        if (jsonData.status === "error") {
-          // ErrorMessage 01: if the Email is already taken, or password 
-          userEmailErrorM.style.display = "block"
-          userEmailErrorM.innerHTML = errorMessageList.existEmail
-        } else {
-          // then create a User and then redirect to Panel.
-          const redirecting = "<?= $site->url() ?>/panel"
-          window.location.href = redirecting
+          });
+
+          const jsonData = await res.json();
+         
+
+          if (jsonData.status === "error") {
+            // ErrorMessage 01: if the Email is already taken, or password 
+            userEmailErrorM.style.display = "block"
+            userEmailErrorM.innerHTML = errorMessageList.existEmail
+          } else {
+            // then create a User and then redirect to Panel.
+            await updateSignUpPage(true)
+            const redirecting = "<?= $site->url() ?>/panel"
+            window.location.href = redirecting
+          }
+        }else{
+          // error message wrong secret key
+          secretKeyErrorM.style.display = "block"
+          secretKeyErrorM.innerHTML = "Wrong Secret Key"
         }
+
       } else {
         // password confirmation doesn't work
         passwordErrorM.style.display = "block"

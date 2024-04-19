@@ -1,11 +1,15 @@
 <?php snippet('header') ?>
 <div class="user_container">
+  <!-- Sign Up Page -->
   <div class="user_wrapper">
-
     <div class="title"><?= $page->titlename() ?></div>
-
+    <div id="disabled_message" class="disabled_message"></div>
     <div>
       <form id="createForm" class="user_form">
+        <div>
+          <input id="secretKey" class="user_input user_text" type="text" name="secret" placeholder="Secret Key" />
+          <div id="secretKeyErrorM" class="error_message"></div>
+        </div>
         <div>
           <input id="userEmail" class="user_input user_text" type="email" name="email" placeholder="Email" />
           <div id="userEmailErrorM" class="error_message"></div>
@@ -17,7 +21,7 @@
           <input id="userPasswordC" class="user_input user_text" minlength="8" type="password" name="password2" placeholder="Confirm Password" />
           <div id="passwordErrorM" class="error_message"></div>
         </div>
-        <button class="user_input user_createuser_btn"><?= $page->createuserbtn() ?></button>
+        <button id="signPBtn" class="user_input user_createuser_btn"><?= $page->createuserbtn() ?></button>
       </form>
       <div class="user_login">
         <div><?= $page->loginbtn2() ?></div>
@@ -30,6 +34,7 @@
 
     </div>
   </div>
+  <!-- Password Page -->
   <div class="password_wrapper">
     <div class="title"><?= $page->forgetpagename() ?></div>
     <div>
@@ -49,6 +54,7 @@
       </div>
     </div>
   </div>
+  <!-- Reset Page -->
   <div class="reset_wrapper">
     <div class="title"><?= $page->resetpagename() ?></div>
     <div>
