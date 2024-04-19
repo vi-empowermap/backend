@@ -1,4 +1,12 @@
 <script>
+  /* Fetch Header Info */
+  const userInfo = {
+    authEmail: "<?= $page->env("USEREMAIL") ?>",
+    authPassword: "<?= $page->env("USERPASSWORD") ?>"
+  }
+  const encodedAuthString = btoa(`${userInfo.authEmail}:${userInfo.authPassword}`);
+  const headerAuthString = `Basic ${encodedAuthString}`;
+
 
   const errorMessageList = {
     passwordConfirmation: "<?= $page->passwordconfirmation() ?>",
@@ -8,7 +16,7 @@
     globalError: "<?= $page->globalerror() ?>"
 
   }
-  
+
   let readyPasswordForgot = false;
 
   const FPBtn = document.querySelector(".user_password")
@@ -85,13 +93,6 @@
 
   /* Forget Password Page close Errormessage */
 
-  /* Fetch Header Info */
-  const userInfo = {
-    authEmail: "<?= $page->env("USEREMAIL") ?>",
-    authPassword: "<?= $page->env("USERPASSWORD") ?>"
-  }
-  const encodedAuthString = btoa(`${userInfo.authEmail}:${userInfo.authPassword}`);
-  const headerAuthString = `Basic ${encodedAuthString}`;
 
   // ------------------------------------------------------------------------------------------------
 

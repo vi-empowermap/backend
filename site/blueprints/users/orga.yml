@@ -63,21 +63,25 @@ columns:
       fields:
         type: fields
         fields:
+          publicbtn:
+            label: Public
+            type: toggle
+            default: false
+            help: to Public
           info:
             type: info
             label: info
-            theme: negative
+            theme: positive
             text: |
               Password Reset Info
-          passwordresetkey:
-            type: toggle
-            default: false
-            help: This is your choice.
+            when:
+              publicbtn: true
           infopassword:
             label: inforpassword what is the name of your dog
             type: text
+            required: true
             when:
-              passwordresetkey: true
+              publicbtn: true
 
   left:
     width: 1/2
@@ -88,25 +92,36 @@ columns:
         theme: positive
         text: |
           Name der Organisation oder des Projekts
+        when:
+          publicbtn: true
       organame:
         label: Name der Organisation
         type: text
         minlength: 3
         maxlength: 100
         help: Min.3 Max.100
+        required: true
+        when:
+          publicbtn: true
       aboutorga:
         label: Beschreibung
         type: textarea
+        required: true
+        when:
+          publicbtn: true
       lokalorga:
         label: Keine Verortung
         type: toggle
         default: false
         help: ich wünsche keine Verortung
+        when:
+          publicbtn: true
       location: # locator plugin
         type: locator
         help: (Optional Data)
         when:
           lokalorga: false
+          publicbtn: true
       street:
         label: Street
         type: text
@@ -114,6 +129,7 @@ columns:
         width: 2/3
         when:
           lokalorga: false
+          publicbtn: true
       zip:
         label: ZIP
         type: text
@@ -121,6 +137,7 @@ columns:
         help: (Optional Data)
         when:
           lokalorga: false
+          publicbtn: true
       city:
         label: Stadt
         type: text
@@ -128,6 +145,7 @@ columns:
         help: (Optional Data)
         when:
           lokalorga: false
+          publicbtn: true
       bundesland:
         label: Bundesland
         width: 1/2
@@ -135,6 +153,7 @@ columns:
         help: (Optional Data)
         when:
           lokalorga: false
+          publicbtn: true
         options:
           hamburg: Hamburg
           bremen: Bremen
@@ -152,22 +171,36 @@ columns:
         theme: positive
         text: |
           Kontakt
+        when:
+          publicbtn: true
       email:
         label: Email
         type: email
+        required: true
+        when:
+          publicbtn: true
       contactnummber:
         label: Telefonnummer
         type: tel
         help: (Optional Data)
+        when:
+          publicbtn: true
       commentforcontact:
         label: Kommentar zum Kontakt
         type: text
+        when:
+          publicbtn: true
       website:
         label: Website
         type: url
+        required: true
+        when:
+          publicbtn: true
       social:
         label: Social Media link
         type: structure
+        when:
+          publicbtn: true
         fields:
           medianame:
             label: Title
@@ -184,10 +217,15 @@ columns:
         theme: positive
         text: |
           Verschlagwortung
+        when:
+          publicbtn: true
       themenschwerpunkt:
         label: Themenschwerpunkt
         type: select
         width: 1/2
+        required: true
+        when:
+          publicbtn: true
         options:
           xx: xx
           yy: yy
@@ -196,6 +234,9 @@ columns:
         label: Art der Organisation
         type: select
         width: 1/2
+        required: true
+        when:
+          publicbtn: true
         options:
           xx: xx
           yy: yy
@@ -204,6 +245,9 @@ columns:
         label: Zielgruppe
         type: select
         width: 1/2
+        required: true
+        when:
+          publicbtn: true
         options:
           xx: xx
           yy: yy
@@ -212,6 +256,9 @@ columns:
         label: Online-Resourcen
         type: select
         width: 1/2
+        required: true
+        when:
+          publicbtn: true
         options:
           xx: xx
           yy: yy
@@ -220,6 +267,9 @@ columns:
         label: Sprachunterstützung
         type: select
         width: 1/2
+        required: true
+        when:
+          publicbtn: true
         options:
           xx: xx
           yy: yy
@@ -228,6 +278,9 @@ columns:
         label: Aktivitäten
         type: select
         width: 1/2
+        required: true
+        when:
+          publicbtn: true
         options:
           xx: xx
           yy: yy
@@ -237,6 +290,9 @@ columns:
         label: Tags
         type: multiselect
         width: 1/2
+        required: true
+        when:
+          publicbtn: true
         options:
           type: query
           query: kirby.users.pluck("tags", ",", true)
@@ -244,6 +300,8 @@ columns:
         label: Create new tags
         type: tags
         width: 1/2
+        when:
+          publicbtn: true
         fields:
           tagname:
             type: text
@@ -251,16 +309,22 @@ columns:
 
       archivoraktiv:
         label: Archiv oder Aktiv
-        type: radio
+        type: select
         width: 1/2
+        required: true
+        when:
+          publicbtn: true
         options:
           aktive: Aktive
           archiv: Archiv
 
       geltungsbereich:
         label: Geltungsbereich
-        type: radio
+        type: select
         width: 1/2
+        required: true
+        when:
+          publicbtn: true
         options:
           lokal: Lokal
           kommunal: Kommunal
