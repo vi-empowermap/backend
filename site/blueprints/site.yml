@@ -6,6 +6,35 @@ sections:
   info:
     type: fields
     fields:
+      signupon:
+        width: 1/4
+        label: Sign-Up page
+        default: false
+        type: toggle
+      randomcode:
+        width: 1/4
+        label: Random Code for Sign-Up
+        type: text
+        required: true
+        when:
+          signupon: true
+      limitcount:
+        width: 1/4
+        label: Total Count
+        type: number
+        required: true
+        when:
+          signupon: true
+      infototalcount:
+        width: 1/4
+        label: Currnt Count
+        type: info
+        text: 0 user
+        theme: positive
+        when:
+          signupon: true
+
+
 
 
 
