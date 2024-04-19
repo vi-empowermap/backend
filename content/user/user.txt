@@ -42,6 +42,18 @@ Resetbtn: Reset
 
 ----
 
+Signupservice: Currently, Sign-Up for the service has been temporarily suspended by the administrator
+
+----
+
+Wrongkey: Wrong Secret Key
+
+----
+
+Fullcapacity: The capacity for the current secret key is currently full.
+
+----
+
 Passwordconfirmation: Password Confirmation doesn't match
 
 ----

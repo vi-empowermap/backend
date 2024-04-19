@@ -8,7 +8,7 @@ sections:
     fields:
       signupon:
         width: 1/4
-        label: Sign-Up page
+        label: Sign-Up.Config
         default: false
         type: toggle
         help: Active Sign-Up
@@ -19,7 +19,7 @@ sections:
         required: true
         when:
           signupon: true
-        help: Create a Secret key as you wish. Alternatively, you can copy a random key from https://randomkeygen.com/
+        help: Write a Secret key as you wish. Alternatively, you can copy a random key from https://randomkeygen.com/
       limitcount:
         width: 1/4
         label: Total users who can sign up using the current secret key.
@@ -33,7 +33,7 @@ sections:
         label: Current users who signed up with the current secret key
         type: number
         default: 0
-        help: Don't change anything here; it will update automatically. Even if you have already made changes, Just let it
+        help: Don't change anything here; it will update automatically if a user signs up using the current secret key. Even if you have already made changes, just let it be. If you want to check the changes, then refresh your browser
         when:
           signupon: true
 

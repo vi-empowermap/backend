@@ -80,6 +80,18 @@ columns:
         theme: positive
         text: |
           Error Messages for sign-up, reset password and forget password
+      signupservice:
+        type: text
+        label: Currently, Sign-Up for the service has been temporarily suspended by the administrator
+        width: 1/2
+      wrongkey:
+        type: text
+        label: Wrong Secret Key
+        width: 1/2
+      fullcapacity:
+        type: text
+        label: The capacity for the current secret key is currently full.
+        width: 1/2
       passwordconfirmation:
         type: text
         label: Password Confirmation

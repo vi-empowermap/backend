@@ -2,7 +2,7 @@ Title: Site Title
 
 ----
 
-Signupon: false
+Signupon: true
 
 ----
 
@@ -10,7 +10,7 @@ Randomcode: sein
 
 ----
 
-Limitcount: 5
+Limitcount: 6
 
 ----
 

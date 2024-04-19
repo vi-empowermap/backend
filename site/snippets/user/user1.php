@@ -13,7 +13,10 @@
     notFoundEmail: "<?= $page->notexistemail() ?>",
     existEmail: "<?= $page->existemail() ?>",
     wrongAnswer: "<?= $page->wronganswer() ?>",
-    globalError: "<?= $page->globalerror() ?>"
+    globalError: "<?= $page->globalerror() ?>",
+    fullcapacity: "<?= $page->fullcapacity() ?>",
+    wrongkey: "<?= $page->wrongkey() ?>",
+    signupservice: "<?= $page->signupservice() ?>",
 
   }
 
@@ -155,7 +158,7 @@
             if(!end){
               signPBtn.disabled = true;
               disabled_message.style.display = "block"
-              disabled_message.innerText = "Sorry. Voll."
+              disabled_message.innerText = errorMessageList.fullcapacity
             }
 
           } else {
@@ -166,7 +169,7 @@
           // show message
           signPBtn.disabled = true;
           disabled_message.style.display = "block"
-          disabled_message.innerText = "Sorry. You can't create an account now."
+          disabled_message.innerText = errorMessageList.signupservice
 
         }
       }
@@ -235,7 +238,7 @@
         }else{
           // error message wrong secret key
           secretKeyErrorM.style.display = "block"
-          secretKeyErrorM.innerHTML = "Wrong Secret Key"
+          secretKeyErrorM.innerHTML = errorMessageList.wrongkey
         }
 
       } else {

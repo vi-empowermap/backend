@@ -80,8 +80,14 @@ columns:
               Password Reset Info
             when:
               publicbtn: true
+          customquestion:
+            label: What is your question
+            type: text
+            required: true
+            when:
+              publicbtn: true
           infopassword:
-            label: inforpassword what is the name of your dog
+            label: Answer
             type: text
             required: true
             when:
