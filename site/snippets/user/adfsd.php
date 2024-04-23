@@ -25,17 +25,14 @@
   const FPBtn = document.querySelector(".user_password")
   const userWraapper = document.querySelector(".user_wrapper")
   const passwordWraapper = document.querySelector(".password_wrapper")
-  const passwordWraapper2 = document.querySelector(".password_wrapper2")
   const resetWraapper = document.querySelector(".reset_wrapper")
   const createUserBtn = document.querySelector("#createUserBtn")
-  const createUserBtn2 = document.querySelector("#createUserBtn2")
 
   FPBtn.addEventListener("click", () => {
     readyPasswordForgot = true
     if (readyPasswordForgot) {
       userWraapper.style.display = "none"
       passwordWraapper.style.display = "block"
-      passwordWraapper2.style.display = "none"
     }
   })
 
@@ -44,15 +41,6 @@
     if (!readyPasswordForgot) {
       userWraapper.style.display = "block"
       passwordWraapper.style.display = "none"
-      passwordWraapper2.style.display = "none"
-    }
-  })
-  createUserBtn2.addEventListener("click", () => {
-    readyPasswordForgot = false
-    if (!readyPasswordForgot) {
-      userWraapper.style.display = "block"
-      passwordWraapper.style.display = "none"
-      passwordWraapper2.style.display = "none"
     }
   })
 
@@ -69,7 +57,6 @@
   /* Forget Paassword Page */
   const fUserEmail = document.querySelector("#fUserEmail")
   const pQuestion = document.querySelector("#pQuestion")
-  const forgotPasswordForm2 = document.querySelector("#forgotPasswordForm2")
 
   /* Reset Page */
   const r_password = document.querySelector("#r_password");
@@ -299,20 +286,15 @@
           },
         });
         const findUser = await res2.json();
-        console.log(findUser)
-        passwordWraapper.style.display = "none"
-        passwordWraapper2.style.display = "block"
-        const pQuestion2 = document.querySelector("#pQuestion2")
-        pQuestion2.innerText = `Question:${findUser.data.content.customquestion}`
 
-        const onHandleSubmitPP = (ee) => {
-          ee.preventDefault()
-     
+        
+
+
         // compare your answer and user answer
         if (findUser.data.content.infopassword === pQuestion.value) {
-       
+
           // open reset password page
-          passwordWraapper2.style.display = "none"
+          passwordWraapper.style.display = "none"
           resetWraapper.style.display = "block"
 
 
@@ -359,11 +341,6 @@
           pQuestionErrorM.style.display = "block"
           pQuestionErrorM.innerHTML = errorMessageList.wrongAnswer
         }
-        }
-
-        forgotPasswordForm2.addEventListener("submit", onHandleSubmitPP)
-
-        
       }
 
 

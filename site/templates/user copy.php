@@ -43,19 +43,6 @@
           <input id="fUserEmail" class="user_input user_text" type="email" name="email" placeholder="Email" />
           <div id="fUserEmailErrorM" class="error_message"></div>
         </div>
-        
-        <button class="user_input user_createuser_btn"><?= $page->forgetpasswordbtn3() ?></button>
-      </form>
-      <div class="user_login">
-        <div id="createUserBtn" class="user_btn">&larr; <?= $page->createuserbtn() ?></div>
-      </div>
-    </div>
-  </div>
-  <div class="password_wrapper2">
-    <div class="title"><?= $page->forgetpagename() ?></div>
-    <div>
-      <form id="forgotPasswordForm2" class="user_form"> 
-        <div id="pQuestion2"></div>
         <div>
           <input id="pQuestion" class="user_input user_text" type="text" name="question" placeholder="Answer" />
           <div id="pQuestionErrorM" class="error_message"></div>
@@ -63,10 +50,15 @@
         <button class="user_input user_createuser_btn"><?= $page->forgetpasswordbtn3() ?></button>
       </form>
       <div class="user_login">
-        <div id="createUserBtn2" class="user_btn">&larr; <?= $page->createuserbtn() ?></div>
+        <div id="createUserBtn" class="user_btn">&larr; <?= $page->createuserbtn() ?></div>
       </div>
     </div>
   </div>
+  <div class="password_wrapper">
+    <div class="title"><?= $page->forgetpagename() ?></div>
+   
+  </div>
+
   <!-- Reset Page -->
   <div class="reset_wrapper">
     <div class="title"><?= $page->resetpagename() ?></div>
@@ -84,9 +76,6 @@
       
     </div>
   </div>
-  </div>
-
-  
 </div>
 
 

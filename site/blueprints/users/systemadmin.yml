@@ -36,7 +36,7 @@ permissions:
     update: true
   site:
     changeTitle: false
-    update: false
+    update: true
   user:
     changeEmail: true
     changeLanguage: true
@@ -49,8 +49,8 @@ permissions:
     changeEmail: false
     changeLanguage: false
     changeName: false
-    changePassword: false
+    changePassword: true
     changeRole: false
-    create: true
-    delete: true
-    update: false
+    create: false
+    delete: false
+    update: true

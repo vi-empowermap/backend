@@ -183,7 +183,7 @@ columns:
           Kontakt
         when:
           publicbtn: true
-      email:
+      email_p:
         label: Email
         type: email
         required: true
@@ -300,7 +300,6 @@ columns:
         label: Tags
         type: multiselect
         width: 1/2
-        required: true
         when:
           publicbtn: true
         options:
