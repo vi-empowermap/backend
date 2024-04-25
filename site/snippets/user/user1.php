@@ -98,13 +98,9 @@
   r_password.addEventListener("focus", onFocus)
   r_password2.addEventListener("focus", onFocus)
 
-
-
-
   // ------------------------------------------------------------------------------------------------
-  /* Sign-Up Page
-  
-  */
+
+  /* Sign-Up Page */
   const updateSignUpPage = async (end = false) => {
     try {
       const signPBtn = document.querySelector("#signPBtn")
