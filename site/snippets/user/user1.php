@@ -1,13 +1,16 @@
 <script>
+  /* ---- You need to use Fetch to handle KIRBY API ---- */
   /* Fetch Header Info */
   const userInfo = {
     authEmail: "<?= $page->env("USEREMAIL") ?>",
     authPassword: "<?= $page->env("USERPASSWORD") ?>"
   }
-  const encodedAuthString = btoa(`${userInfo.authEmail}:${userInfo.authPassword}`);
-  const headerAuthString = `Basic ${encodedAuthString}`;
 
+  /* Buffer is for NODEJS so PHP have to use btoa to handle Binary data */
+  const encodedAuthString = btoa(`${userInfo.authEmail}:${userInfo.authPassword}`)
+  const headerAuthString = `Basic ${encodedAuthString}`
 
+  /* Error Messages List: Panel->Site->user */
   const errorMessageList = {
     passwordConfirmation: "<?= $page->passwordconfirmation() ?>",
     notFoundEmail: "<?= $page->notexistemail() ?>",
@@ -17,51 +20,21 @@
     fullcapacity: "<?= $page->fullcapacity() ?>",
     wrongkey: "<?= $page->wrongkey() ?>",
     signupservice: "<?= $page->signupservice() ?>",
-
   }
-
-  let readyPasswordForgot = false;
 
   const FPBtn = document.querySelector(".user_password")
   const userWraapper = document.querySelector(".user_wrapper")
   const passwordWraapper = document.querySelector(".password_wrapper")
   const passwordWraapper2 = document.querySelector(".password_wrapper2")
   const resetWraapper = document.querySelector(".reset_wrapper")
-  const createUserBtn = document.querySelector("#createUserBtn")
-  const createUserBtn2 = document.querySelector("#createUserBtn2")
-
-  FPBtn.addEventListener("click", () => {
-    readyPasswordForgot = true
-    if (readyPasswordForgot) {
-      userWraapper.style.display = "none"
-      passwordWraapper.style.display = "block"
-      passwordWraapper2.style.display = "none"
-    }
-  })
-
-  createUserBtn.addEventListener("click", () => {
-    readyPasswordForgot = false
-    if (!readyPasswordForgot) {
-      userWraapper.style.display = "block"
-      passwordWraapper.style.display = "none"
-      passwordWraapper2.style.display = "none"
-    }
-  })
-  createUserBtn2.addEventListener("click", () => {
-    readyPasswordForgot = false
-    if (!readyPasswordForgot) {
-      userWraapper.style.display = "block"
-      passwordWraapper.style.display = "none"
-      passwordWraapper2.style.display = "none"
-    }
-  })
+  const createUserBtn = document.querySelectorAll(".createUserBtn_c")
 
   // Create User 
-  const createForm = document.querySelector("#createForm");
-  const forgotPasswordForm = document.querySelector("#forgotPasswordForm");
+  const createForm = document.querySelector("#createForm")
+  const forgotPasswordForm = document.querySelector("#forgotPasswordForm")
 
   /* Sign-Up Page */
-  const secretKey = document.querySelector("#secretKey");
+  const secretKey = document.querySelector("#secretKey")
   const userEmail = document.querySelector("#userEmail")
   const userPassword = document.querySelector("#userPassword")
   const userPassword2 = document.querySelector("#userPasswordC")
@@ -72,8 +45,8 @@
   const forgotPasswordForm2 = document.querySelector("#forgotPasswordForm2")
 
   /* Reset Page */
-  const r_password = document.querySelector("#r_password");
-  const r_password2 = document.querySelector("#r_password2");
+  const r_password = document.querySelector("#r_password")
+  const r_password2 = document.querySelector("#r_password2")
 
   /* Error Messages */
   // sign-up
@@ -86,6 +59,20 @@
   // reset
   const r_password2ErrorM = document.querySelector("#r_password2ErrorM")
 
+  /* Open Forget Password Page */
+  FPBtn.addEventListener("click", () => {
+    userWraapper.style.display = "none"
+    passwordWraapper.style.display = "block"
+    passwordWraapper2.style.display = "none"
+  })
+  /* Open Sign-Up Page: in Forget Password page1 and page2 */
+  createUserBtn.forEach((element, index) => {
+    element.addEventListener("click", () => {
+      userWraapper.style.display = "block"
+      passwordWraapper.style.display = "none"
+      passwordWraapper2.style.display = "none"
+    })
+  })
 
   /* Sign up page close Errormessage */
   const onFocus = () => {
@@ -101,7 +88,6 @@
     pQuestionErrorM.innerHTML = ""
     r_password2ErrorM.style.display = "none"
     r_password2ErrorM.innerHTML = ""
-
   }
   secretKey.addEventListener("focus", onFocus)
   userEmail.addEventListener("focus", onFocus)
@@ -116,8 +102,10 @@
 
 
   // ------------------------------------------------------------------------------------------------
-  /* Check SignUpage Disabled and update */
-  const updateSignUpPage = async (end=false) => {
+  /* Sign-Up Page
+  
+  */
+  const updateSignUpPage = async (end = false) => {
     try {
       const signPBtn = document.querySelector("#signPBtn")
       const disabled_message = document.querySelector("#disabled_message")
@@ -128,13 +116,12 @@
           "Authorization": headerAuthString,
           "Content-Type": "application/json",
         },
-      });
-      const data = await res.json();
+      })
+      const data = await res.json()
 
-      console.log(data)
       if (data.status === "ok") {
         if (data.data.content.signupon) {
-          signPBtn.disabled = false;
+          signPBtn.disabled = false
           disabled_message.style.block = "none"
 
           const resUsers = await fetch(`/api/users?select=content,role`, {
@@ -143,13 +130,13 @@
               "Authorization": headerAuthString,
               "Content-Type": "application/json",
             },
-          });
-          const usersList = await resUsers.json();
+          })
+          const usersList = await resUsers.json()
           const currentOgaCounts = usersList.data.filter((v) => v.role.name === "orga")
-          console.log(currentOgaCounts)
+        
           const currentKeyOraCounts = currentOgaCounts.filter((v) => v.content.secret_key ===
             data.data.content.randomcode)
-          console.log(currentKeyOraCounts)
+         
 
 
 
@@ -164,35 +151,36 @@
               "Content-Type": "application/json",
             },
             body: JSON.stringify(bodyData)
-          });
+          })
 
           // if already voll then disabled again 
           if (currentKeyOraCounts.length >= data.data.content.limitcount) {
-            if(!end){
-              signPBtn.disabled = true;
+            if (!end) {
+              signPBtn.disabled = true
               disabled_message.style.display = "block"
               disabled_message.innerText = errorMessageList.fullcapacity
             }
 
           } else {
-            signPBtn.disabled = false;
+            signPBtn.disabled = false
             disabled_message.style.block = "none"
           }
         } else {
           // show message
-          signPBtn.disabled = true;
+          signPBtn.disabled = true
           disabled_message.style.display = "block"
           disabled_message.innerText = errorMessageList.signupservice
 
         }
       }
 
-      return data;
+      return data
     } catch (error) {
       window.alert(errorMessageList.globalError)
     }
 
   }
+  /* When user open the sign-up page then update the current information of sign-up config first */
   updateSignUpPage()
 
 
@@ -207,9 +195,6 @@
       // ⭐️ update again current count
 
       const sitedata = await updateSignUpPage()
-      console.log(sitedata)
-
-
 
       // Check Password Confirmation
       if (userPassword.value === userPassword2.value) {
@@ -233,10 +218,10 @@
             },
             body: JSON.stringify(bodyData)
 
-          });
+          })
 
-          const jsonData = await res.json();
-         
+          const jsonData = await res.json()
+
 
           if (jsonData.status === "error") {
             // ErrorMessage 01: if the Email is already taken, or password 
@@ -248,7 +233,7 @@
             const redirecting = "<?= $site->url() ?>/panel"
             window.location.href = redirecting
           }
-        }else{
+        } else {
           // error message wrong secret key
           secretKeyErrorM.style.display = "block"
           secretKeyErrorM.innerHTML = errorMessageList.wrongkey
@@ -277,8 +262,8 @@
           "Authorization": headerAuthString,
           "Content-Type": "application/json",
         },
-      });
-      const userList = await res.json();
+      })
+      const userList = await res.json()
 
 
       // check the email is exist.
@@ -297,9 +282,8 @@
             "Authorization": headerAuthString,
             "Content-Type": "application/json",
           },
-        });
-        const findUser = await res2.json();
-        console.log(findUser)
+        })
+        const findUser = await res2.json()
         passwordWraapper.style.display = "none"
         passwordWraapper2.style.display = "block"
         const pQuestion2 = document.querySelector("#pQuestion2")
@@ -307,63 +291,63 @@
 
         const onHandleSubmitPP = (ee) => {
           ee.preventDefault()
-     
-        // compare your answer and user answer
-        if (findUser.data.content.infopassword === pQuestion.value) {
-       
-          // open reset password page
-          passwordWraapper2.style.display = "none"
-          resetWraapper.style.display = "block"
+
+          // compare your answer and user answer
+          if (findUser.data.content.infopassword === pQuestion.value) {
+
+            // open reset password page
+            passwordWraapper2.style.display = "none"
+            resetWraapper.style.display = "block"
 
 
-          const resetForm = document.querySelector("#resetForm");
+            const resetForm = document.querySelector("#resetForm")
 
 
-          const onHandleResetSubmit = async (e) => {
-            e.preventDefault();
+            const onHandleResetSubmit = async (e) => {
+              e.preventDefault()
 
-            // check password confirmation
-            if (r_password.value === r_password2.value) {
-              // reset
-              const passwordData = {
-                password: r_password.value
-              }
-              const res3 = await fetch(`/api/users/${findUser.data.id}/password`, {
-                method: "PATCH",
-                headers: {
-                  "Authorization": headerAuthString,
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(passwordData)
-              });
+              // check password confirmation
+              if (r_password.value === r_password2.value) {
+                // reset
+                const passwordData = {
+                  password: r_password.value
+                }
+                const res3 = await fetch(`/api/users/${findUser.data.id}/password`, {
+                  method: "PATCH",
+                  headers: {
+                    "Authorization": headerAuthString,
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(passwordData)
+                })
 
-              const resetPasswordStatus = await res3.json();
-              //  after reset
-              if (resetPasswordStatus.status = "ok") {
-                const redirecting = "<?= $site->url() ?>/panel"
-                window.location.href = redirecting
+                const resetPasswordStatus = await res3.json()
+                //  after reset
+                if (resetPasswordStatus.status = "ok") {
+                  const redirecting = "<?= $site->url() ?>/panel"
+                  window.location.href = redirecting
+                } else {
+                  window.alert(errorMessageList.globalError)
+                }
+
+
               } else {
-                window.alert(errorMessageList.globalError)
+                r_password2ErrorM.style.display = "block"
+                r_password2ErrorM.innerHTML = errorMessageList.passwordConfirmation
               }
 
-
-            } else {
-              r_password2ErrorM.style.display = "block"
-              r_password2ErrorM.innerHTML = errorMessageList.passwordConfirmation
             }
-
+            resetForm.addEventListener("submit", onHandleResetSubmit)
+          } else {
+            // wrong answer
+            pQuestionErrorM.style.display = "block"
+            pQuestionErrorM.innerHTML = errorMessageList.wrongAnswer
           }
-          resetForm.addEventListener("submit", onHandleResetSubmit)
-        } else {
-          // wrong answer
-          pQuestionErrorM.style.display = "block"
-          pQuestionErrorM.innerHTML = errorMessageList.wrongAnswer
-        }
         }
 
         forgotPasswordForm2.addEventListener("submit", onHandleSubmitPP)
 
-        
+
       }
 
 

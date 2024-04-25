@@ -2,19 +2,19 @@ Title: Site Title
 
 ----
 
-Signupon: true
+Signupon: false
 
 ----
 
-Randomcode: sein
+Randomcode: 4ms0bnZzkL
 
 ----
 
-Limitcount: 6
+Limitcount: 1
 
 ----
 
-Infototalcount: 5
+Infototalcount: 1
 
 ----
 

@@ -1,13 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body {background-color: "#ececec";}
 
-
-body {
-  background-color: "#ececec";
-}
 .disabled_message{
   text-align: center;
   color: rgb(220, 33, 33);
@@ -31,13 +24,26 @@ button:disabled{
 
 }
 
-.user_wrapper {
+/* ------ Wrapper ------ */
+
+.default_wrapper{
   width: 600px;
   height: fit-content;
   background-color: white;
   padding: 40px;
   border-radius: 20px;
 }
+
+.user_wrapper {}
+
+/* Forget Password */
+.password_wrapper{display: none;}
+.password_wrapper2{display: none;}
+/* Reset page */
+.reset_wrapper{display: none;}
+
+
+
 
 .title {
   font-size: 30px;
@@ -78,10 +84,6 @@ button:disabled{
   cursor: pointer;
 }
 
-
-
-
-
 .user_createuser_btn {
   background-color: #24a0ed;
   cursor: pointer;
@@ -89,17 +91,6 @@ button:disabled{
   justify-content: center;
   align-items: center;
   color: white;
-}
-
-
-.userlogin_wrapper{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 40px;
-  gap: 10px;
-  border-top: 1px solid gray;
-  padding: 10px 0px;
 }
 
 .user_login{
@@ -120,27 +111,6 @@ button:disabled{
   cursor: pointer;
 }
 
-/* Password Forgot */
-
-.password_wrapper{
-  width: 600px;
-  height: fit-content;
-  background-color: white;
-  padding: 40px;
-  border-radius: 20px;
-  display: none;
-
-}
-.password_wrapper2{
-  width: 600px;
-  height: fit-content;
-  background-color: white;
-  padding: 40px;
-  border-radius: 20px;
-  display: none;
-
-}
-
 .error_message{
   font-size: 13px;
   color: red;
@@ -150,12 +120,3 @@ button:disabled{
 
 
 
-/* Reset page */
-.reset_wrapper{
-  width: 600px;
-  height: fit-content;
-  background-color: white;
-  padding: 40px;
-  border-radius: 20px;
-  display: none;
-}

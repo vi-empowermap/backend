@@ -1,7 +1,13 @@
 <?php snippet('header') ?>
 <div class="user_container">
-  <!-- Sign Up Page -->
-  <div class="user_wrapper">
+  <!-- 
+    Sign Up Page
+    - 1. Check: if Sign Up has been suspended.
+    - 2. Check: if Capacity for a SECRET_KEY.
+    - 3. Check: if the Email is already taken. 
+    - 4. Check: Password Confirmation.
+  -->
+  <div class="user_wrapper default_wrapper">
     <div class="title"><?= $page->titlename() ?></div>
     <div id="disabled_message" class="disabled_message"></div>
     <div>
@@ -34,8 +40,11 @@
 
     </div>
   </div>
-  <!-- Password Page -->
-  <div class="password_wrapper">
+  <!-- 
+    Forget Password Page1
+    - 1. Check: if the Email is exist.
+   -->
+  <div class="password_wrapper default_wrapper">
     <div class="title"><?= $page->forgetpagename() ?></div>
     <div>
       <form id="forgotPasswordForm" class="user_form">
@@ -43,18 +52,22 @@
           <input id="fUserEmail" class="user_input user_text" type="email" name="email" placeholder="Email" />
           <div id="fUserEmailErrorM" class="error_message"></div>
         </div>
-        
+
         <button class="user_input user_createuser_btn"><?= $page->forgetpasswordbtn3() ?></button>
       </form>
       <div class="user_login">
-        <div id="createUserBtn" class="user_btn">&larr; <?= $page->createuserbtn() ?></div>
+        <div id="createUserBtn" class="createUserBtn_c user_btn">&larr; <?= $page->createuserbtn() ?></div>
       </div>
     </div>
   </div>
-  <div class="password_wrapper2">
+  <!-- 
+    Forget Password Page2
+    - 2. Check: Answer Confirmation 
+  -->
+  <div class="password_wrapper2 default_wrapper">
     <div class="title"><?= $page->forgetpagename() ?></div>
     <div>
-      <form id="forgotPasswordForm2" class="user_form"> 
+      <form id="forgotPasswordForm2" class="user_form">
         <div id="pQuestion2"></div>
         <div>
           <input id="pQuestion" class="user_input user_text" type="text" name="question" placeholder="Answer" />
@@ -63,12 +76,15 @@
         <button class="user_input user_createuser_btn"><?= $page->forgetpasswordbtn3() ?></button>
       </form>
       <div class="user_login">
-        <div id="createUserBtn2" class="user_btn">&larr; <?= $page->createuserbtn() ?></div>
+        <div id="createUserBtn2" class="createUserBtn_c user_btn">&larr; <?= $page->createuserbtn() ?></div>
       </div>
     </div>
   </div>
-  <!-- Reset Page -->
-  <div class="reset_wrapper">
+  <!-- 
+    Reset Page 
+    - 1. Check: Password Confirmation.
+  -->
+  <div class="reset_wrapper default_wrapper">
     <div class="title"><?= $page->resetpagename() ?></div>
     <div>
       <form id="resetForm" class="user_form">
@@ -81,15 +97,14 @@
         </div>
         <button class="user_input user_createuser_btn"><?= $page->resetbtn() ?></button>
       </form>
-      
     </div>
   </div>
-  </div>
-
-  
 </div>
 
 
-<?php snippet("user/user1") ?>
+</div>
 
+
+<!-- 💡Write the <script> tag in the snippet file. Kirby syntax works between script tags with JavaScript -->
+<?php snippet("user/user1") ?>
 <?php snippet('footer') ?>
