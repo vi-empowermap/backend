@@ -160,16 +160,27 @@ columns:
         label: Bundesland
         width: 1/2
         type: select
-        help: (Optional Data)
+        help: This data is essential for counting organizations on the map.
         when:
           lokalorga: false
           publicbtn: true
         options:
+          bayern: Bayern
+          niedersachsen: Niedersachsen
+          baden-Württemberg: Baden-Württemberg
+          nordrhein-Westfalen: Nordrhein-Westfalen
+          brandenburg: Brandenburg
+          mecklenburg-Vorpommern: Mecklenburg-Vorpommern
+          hessen: Hessen
+          sachsen-Anhalt: Sachsen-Anhalt
+          rheinland-Pfalz: Rheinland-Pfalz
+          sachsen: Sachsen
+          thüringen: Thüringen
+          schleswig-Holstein: Schleswig-Holstein
+          saarland: Saarland
+          berlin: Berlin
           hamburg: Hamburg
           bremen: Bremen
-          berlin: Berlin
-          bayern: Bayern
-          schleswig: Schleswig-Hostein
 
 
   right:

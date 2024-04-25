@@ -1,4 +1,8 @@
-Title: home
+Title: Text for Website
+
+----
+
+Minimaptitle: Überblick Bund
 
 ----
 

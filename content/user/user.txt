@@ -1,4 +1,4 @@
-Title: user
+Title: SignUp Page Text and Error Messages
 
 ----
 
