@@ -6,6 +6,14 @@ Minimaptitle: Überblick Bund
 
 ----
 
+Verortungbtntext: Ohne Verortung
+
+----
+
+Centerbtntext: Center
+
+----
+
 Hometitle: 
 
 ----

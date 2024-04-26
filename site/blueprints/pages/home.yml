@@ -12,6 +12,12 @@ columns:
       minimaptitle:
         label: MiniMap Title
         type: text
+      verortungbtntext:
+        label: Ohne Verortung Button Text
+        type: text
+      centerbtntext:
+        label: Center Button Text
+        type: text
 
 
 

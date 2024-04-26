@@ -234,10 +234,10 @@ columns:
     fields:
       info4:
         type: info
-        label: info
+        label: Filter
         theme: positive
         text: |
-          Verschlagwortung
+          Filteroptionen
         when:
           publicbtn: true
       themenschwerpunkt:
@@ -248,9 +248,19 @@ columns:
         when:
           publicbtn: true
         options:
-          xx: xx
-          yy: yy
-          zz: zz
+          a: Bildung & Professionalisierung
+          b: Kultur und Kunst
+          c: Gesundheit und Soziales
+          d: Rech
+          e: Politik & und Advocacy
+          f: Community-Building
+          g: Beratung
+          h: Wissenschaft
+          i: Sprachen & Übersetzungsarbeit
+          j: Kinder & Jugend
+          k: Sport & Freizeit
+          l: Religion
+          m: Flucht & Migration
       artderorganisation:
         label: Art der Organisation
         type: select
@@ -259,9 +269,12 @@ columns:
         when:
           publicbtn: true
         options:
-          xx: xx
-          yy: yy
-          zz: zz
+          a: Verein
+          b: Initiative
+          c: NGO (Nichtregierungsorganisation)
+          d: Projektgruppe
+          e: Bildungseinrichtung
+          f: Kultureinrichtung
       zielgruppe:
         label: Zielgruppe
         type: select
@@ -270,20 +283,29 @@ columns:
         when:
           publicbtn: true
         options:
-          xx: xx
-          yy: yy
-          zz: zz
+          a: Afrikanische/Schwarze Kinder & Jugendliche
+          b: Afrikanische/Schwarze Frauen
+          c: Afrikanische/Schwarze FLINTA(*)
+          d: Afrikanische/Schwarze LSBTQIA+
+          e: "Afrikanische/Schwarze Geflüchtete & Migrant*innen"
+          f: Afrikanische/Schwarze Menschen mit Behinderungen/chronischen Erkrankungen
+          g: "Afrikanische/Schwarze Menschen höheren Alters und Senior*innen"
+          h: Eltern/Bezugspersonen/Pflegeverantwortliche Afrikanischer/Schwarzer Kinder
+          i: Pflegeverantwortliche/Angehörige Afrikanischer/Schwarzer Personen
+          j: Afrikanische/Schwarze Fachkräfte und Freischaffende
+          k: Familien mit Afrikanischen/Schwarzen Mitgliedern
+          l: Weitere
+
       onlineresourcen:
-        label: Online-Resourcen
+        label: Verfügbarkeit von Online-Ressourcen
         type: select
         width: 1/2
         required: true
         when:
           publicbtn: true
         options:
-          xx: xx
-          yy: yy
-          zz: zz
+          web: Website vorhanden
+          social: Social-Media-Präsenz (z. B. Facebook, Twitter, etc.)
       sprachunterstutzung:
         label: Sprachunterstützung
         type: select
@@ -292,20 +314,35 @@ columns:
         when:
           publicbtn: true
         options:
-          xx: xx
-          yy: yy
-          zz: zz
-      aktivitaten:
-        label: Aktivitäten
+          a: Deutsch
+          b: Englisch
+          c: Französisch
+          d: Swahili
+          e: Portugiesisch
+          f: Hausa
+      angebote:
+        label: Angebote
         type: select
         width: 1/2
         required: true
         when:
           publicbtn: true
         options:
-          xx: xx
-          yy: yy
-          zz: zz
+          a: Workshops und Seminare
+          b: Veranstaltungen und Events
+          c: Forschungsprojekte
+          d: Publikationen und (Online-)Ressourcen/Materialien
+          e: Freizeitangebote
+          f: Nachhilfe
+          g: Sprachunterricht
+          h: Übersetzungen
+          i: Dolmetschung
+          j: Betreuung/Pflegedienste
+          k: Kinder- und Jugendbetreuung
+          l: Coaching / Supervision
+          m: Aus- und Weiterbildungen
+          o: Inputs und Vorträge
+          p: Networking
 
       tagpool:
         label: Tags
@@ -320,6 +357,7 @@ columns:
         label: Create new tags
         type: tags
         width: 1/2
+        help: Special characters are not allowed here. EX) `~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/
         when:
           publicbtn: true
         fields:
