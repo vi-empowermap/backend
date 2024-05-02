@@ -242,7 +242,7 @@ columns:
           publicbtn: true
       themenschwerpunkt:
         label: Themenschwerpunkt
-        type: select
+        type: tags
         width: 1/2
         required: true
         when:
