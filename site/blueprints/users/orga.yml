@@ -308,7 +308,7 @@ columns:
           social: Social-Media-Präsenz (z. B. Facebook, Twitter, etc.)
       sprachunterstutzung:
         label: Sprachunterstützung
-        type: select
+        type: tags
         width: 1/2
         required: true
         when:
@@ -322,7 +322,7 @@ columns:
           f: Hausa
       angebote:
         label: Angebote
-        type: select
+        type: tags
         width: 1/2
         required: true
         when:
