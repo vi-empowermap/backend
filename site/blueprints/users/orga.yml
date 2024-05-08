@@ -81,12 +81,14 @@ columns:
             when:
               publicbtn: true
           customquestion:
+            width: 1/2
             label: What is your question
             type: text
             required: true
             when:
               publicbtn: true
           infopassword:
+            width: 1/2
             label: Answer
             type: text
             required: true
@@ -94,7 +96,7 @@ columns:
               publicbtn: true
 
   left:
-    width: 1/2
+    width: 1/1
     fields:
       info2:
         type: info
@@ -105,6 +107,7 @@ columns:
         when:
           publicbtn: true
       organame:
+        width: 1/2
         label: Name der Organisation
         type: text
         minlength: 3
@@ -114,6 +117,7 @@ columns:
         when:
           publicbtn: true
       aboutorga:
+        width: 1/2
         label: Beschreibung
         type: textarea
         required: true
@@ -184,7 +188,7 @@ columns:
 
 
   right:
-    width: 1/2
+    width: 1/1
     fields:
       info3:
         type: info
@@ -195,23 +199,27 @@ columns:
         when:
           publicbtn: true
       email_p:
+        width: 1/4
         label: Email
         type: email
         required: true
         when:
           publicbtn: true
       contactnummber:
+        width: 1/4
         label: Telefonnummer
         type: tel
         help: (Optional Data)
         when:
           publicbtn: true
       commentforcontact:
+        width: 1/4
         label: Kommentar zum Kontakt
         type: text
         when:
           publicbtn: true
       website:
+        width: 1/4
         label: Website
         type: url
         required: true
@@ -223,9 +231,31 @@ columns:
         when:
           publicbtn: true
         fields:
+          notfound:
+            width: 1/4
+            type: toggle
+            default: false
           medianame:
+            width: 3/4
             label: Title
+            type: select
+            when:
+              notfound: false
+            required: true
+            options:
+              a: Facebook
+              b: YouTube
+              c: WhatsApp
+              d: Instagram
+              e: LinkedIn
+              f: Telegram
+              g: X(Twitter)
+          medianamecustom:
+            width: 3/4
+            label: Write your Social Media
             type: text
+            when:
+              notfound: true
           mediasocial:
             label: Link
             type: link
