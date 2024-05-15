@@ -2,6 +2,81 @@ title: Home
 
 
 columns:
+  topleft:
+    width: 1/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          info1:
+            label:
+            type: info
+            text: Intro Page + Home Page Navigation and Logo
+          webtitle:
+            type: text
+            label: Title
+          introtext:
+            type: textarea
+            label: intro text
+          introbtn:
+            type: text
+            label: intro start button text
+          placeholdersearch:
+            type: text
+            label: placeholder text of search input
+          placeholderfilter:
+            type: text
+            label: placeholder text of filter input
+          opengooglemap:
+            type: text
+            label: Open Google Map label text
+  topmid:
+    width: 1/3
+    sections:
+      fields2:
+        type: fields
+        fields:
+          info2:
+            label:
+            type: info
+            text: Orga List and Orga Box
+          bundeslandinfo:
+            label: Bundesland
+            type: text
+  topright:
+    width: 1/3
+    sections:
+      fields3:
+        type: fields
+        fields:
+          info3:
+            label:
+            type: info
+            text: Orga Page info
+          languagesupporttext:
+            type: text
+            label: Sprachunterstützung Label Text
+          angebotetext:
+            type: text
+            label: Angebote Label Text
+          tagstext:
+            type: text
+            label: Tags Label Text
+          locationtext:
+            type: text
+            label: Location Label Text
+          bundeslabeltext:
+            type: text
+            label: Location-bundesland Label Text
+          stadtlabeltext:
+            type: text
+            label: Location-stadt Label Text
+          kontakttext:
+            type: text
+            label: Kontakt Label Text
+          socialmediatext:
+            type: text
+            label: Social Media Label Text
   info:
     width: 1/3
     fields:

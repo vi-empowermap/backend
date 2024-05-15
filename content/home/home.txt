@@ -2,6 +2,66 @@ Title: Text for Website
 
 ----
 
+Webtitle: Empowermap
+
+----
+
+Introtext: Dieses Projekt zeigt hier steht eine kurze Erklärung zum Projekt lorem ipsum Illabo. In exceptate eosam volore, qui simusamus. Ed quae dolupta simporro mod qui omnimet liquuntius, officid magnimus dolupit et pre ni to bernatia volutatures dene ve- nient experci tet vel
+
+----
+
+Introbtn: Zur Karte
+
+----
+
+Placeholdersearch: Suchen
+
+----
+
+Placeholderfilter: 
+
+----
+
+Opengooglemap: Open in Google Map
+
+----
+
+Bundeslandinfo: bundesland
+
+----
+
+Languagesupporttext: Sprachunterstützung
+
+----
+
+Angebotetext: Angebote
+
+----
+
+Tagstext: Tags
+
+----
+
+Locationtext: Location
+
+----
+
+Bundeslabeltext: bundesland
+
+----
+
+Stadtlabeltext: stadt
+
+----
+
+Kontakttext: Kontakt
+
+----
+
+Socialmediatext: Social Media
+
+----
+
 Minimaptitle: Überblick Bund
 
 ----

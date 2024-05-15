@@ -1,0 +1,19 @@
+title: Menu
+
+
+columns:
+  about:
+    width: 1/1
+    fields:
+      info:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          Title Text
+      about_title:
+        width: 1/2
+        label: Title
+        type: text
+        required: true
+
