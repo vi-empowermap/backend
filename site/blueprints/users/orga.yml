@@ -307,7 +307,7 @@ columns:
           f: Kultureinrichtung
       zielgruppe:
         label: Zielgruppe
-        type: select
+        type: tags
         width: 1/2
         required: true
         when:
