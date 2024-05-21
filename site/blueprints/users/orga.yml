@@ -169,22 +169,22 @@ columns:
           lokalorga: false
           publicbtn: true
         options:
-          bayern: Bayern
-          niedersachsen: Niedersachsen
-          baden-Württemberg: Baden-Württemberg
-          nordrhein-Westfalen: Nordrhein-Westfalen
-          brandenburg: Brandenburg
-          mecklenburg-Vorpommern: Mecklenburg-Vorpommern
-          hessen: Hessen
-          sachsen-Anhalt: Sachsen-Anhalt
-          rheinland-Pfalz: Rheinland-Pfalz
-          sachsen: Sachsen
-          thüringen: Thüringen
-          schleswig-Holstein: Schleswig-Holstein
-          saarland: Saarland
-          berlin: Berlin
-          hamburg: Hamburg
-          bremen: Bremen
+          a: Bayern
+          b: Niedersachsen
+          c: Baden-Württemberg
+          d: Nordrhein-Westfalen
+          e: Brandenburg
+          f: Mecklenburg-Vorpommern
+          g: Hessen
+          h: Sachsen-Anhalt
+          i: Rheinland-Pfalz
+          j: Sachsen
+          k: Thüringen
+          l: Schleswig-Holstein
+          m: Saarland
+          n: Berlin
+          o: Hamburg
+          p: Bremen
 
 
   right:
