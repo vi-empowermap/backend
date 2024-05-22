@@ -1,0 +1,13 @@
+title: image
+
+accept:
+  extension: jpg, png, jpeg
+  mime: image/*
+  type: image
+  maxsize: 5000000
+
+# fields:
+#   alt:
+#     label: Alt Text
+#     type: text
+#     required: true

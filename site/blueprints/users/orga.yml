@@ -106,6 +106,16 @@ columns:
           Name der Organisation oder des Projekts
         when:
           publicbtn: true
+      orgaimage:
+        width: 1/2
+        label: Image der Organisation
+        type: files
+        max: 1
+        uploads: image
+        help: Optional data
+        required: false
+        when:
+          publicbtn: true
       organame:
         width: 1/2
         label: Name der Organisation
