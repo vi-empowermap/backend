@@ -10,11 +10,11 @@ Randomcode: 4ms0bnZzkL
 
 ----
 
-Limitcount: 1
+Limitcount: 2
 
 ----
 
-Infototalcount: 1
+Infototalcount: 2
 
 ----
 

@@ -1,13 +1,13 @@
-title: SystemAdmin
+title: SubSystemAdmin
 permissions:
   access:
     account: true
     panel: true
     site: true
-    languages: true
-    system: true
+    languages: false
+    system: false
     users: true
-    backups: true
+    backups: false
   files:
     create: true
     changeName: true
@@ -51,6 +51,6 @@ permissions:
     changeName: true
     changePassword: true
     changeRole: true
-    create: true
-    delete: true
+    create: false
+    delete: false
     update: true
