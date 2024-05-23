@@ -46,10 +46,10 @@ permissions:
     delete: true
     update: true
   users:
-    changeEmail: true
-    changeLanguage: true
-    changeName: true
-    changePassword: true
+    changeEmail: false
+    changeLanguage: false
+    changeName: false
+    changePassword: false
     changeRole: true
     create: true
     delete: true
