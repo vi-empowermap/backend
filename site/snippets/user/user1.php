@@ -2,8 +2,11 @@
   /* ---- You need to use Fetch to handle KIRBY API ---- */
   /* Fetch Header Info */
   const userInfo = {
-    authEmail: "<?= $page->env("USEREMAIL") ?>",
-    authPassword: "<?= $page->env("USERPASSWORD") ?>"
+    // authEmail: "zndgn555@gmail.com",
+    // authPassword: "123123123"
+      // authEmail: "<?= $page->env("USEREMAIL") ?>",
+      authEmail: "<?= $page->env("USEREMAIL") ?>",
+      authPassword: "<?= $page->env("USERPASSWORD") ?>"
   }
 
   /* Buffer is for NODEJS so PHP have to use btoa to handle Binary data */

@@ -30,6 +30,10 @@ Bundeslandinfo: bundesland
 
 ----
 
+Stadtinfo: stadt
+
+----
+
 Languagesupporttext: Sprachunterstützung
 
 ----
