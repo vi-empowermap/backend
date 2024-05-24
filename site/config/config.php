@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PATCH, PUT");
     header("Access-Control-Allow-Headers: Content-Type, Authorization");
     http_response_code(200);
     exit(0);
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Existing PHP logic
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PATCH, PUT");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 /**
