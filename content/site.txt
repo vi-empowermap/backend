@@ -2,7 +2,7 @@ Title: Site Title
 
 ----
 
-Signupon: false
+Signupon: true
 
 ----
 
@@ -14,7 +14,7 @@ Limitcount: 1000
 
 ----
 
-Infototalcount: 10
+Infototalcount: 3
 
 ----
 
