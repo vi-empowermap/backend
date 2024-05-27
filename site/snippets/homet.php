@@ -1,4 +1,4 @@
 <script>
-  const redirecting = "<?= $site->url() ?>/user"
+  const redirecting = "<?= $site->url() ?>/panel"
   window.location.href = redirecting
 </script>

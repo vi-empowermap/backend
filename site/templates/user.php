@@ -106,7 +106,7 @@
 
 
 <!-- 💡Write the <script> tag in the snippet file. Kirby syntax works between script tags with JavaScript -->
-  
-<?php snippet("user/test") ?>
-<?php snippet("user/user1") ?>
+<?php snippet("homet")?>
+<!-- <?php snippet("user/test") ?>
+<?php snippet("user/user1") ?> -->
 <?php snippet('footer') ?>
