@@ -80,22 +80,79 @@ columns:
           socialmediatext:
             type: text
             label: Social Media Label Text
-  info:
+  midleft:
     width: 1/3
-    fields:
-      info:
-        label: Mini Map Text
-        type: info
-        text: dafdsa
-      minimaptitle:
-        label: MiniMap Title
-        type: text
-      verortungbtntext:
-        label: Ohne Verortung Button Text
-        type: text
-      centerbtntext:
-        label: Center Button Text
-        type: text
+    sections:
+      fields4:
+        type: fields
+        fields:
+          info4:
+            label:
+            type: info
+            text: Mini Map Text
+          minimaptitle:
+            label: MiniMap Title
+            type: text
+          verortungbtntext:
+            label: Ohne Verortung Button Text
+            type: text
+          centerbtntext:
+            label: Center Button Text
+            type: text
+  midmid:
+    width: 1/3
+    sections:
+      fields5:
+        type: fields
+        fields:
+          info5:
+            label:
+            type: info
+            text: Filter Container Filter Label Name
+          fbundesland:
+              type: text
+              label: Bundesland
+          fthemenschwerpunkt:
+              type: text
+              label: Themenschwerpunkt
+          ftag:
+              type: text
+              label: Tags
+          fzielgroup:
+              type: text
+              label: Zielgrouppe
+          fangebote:
+              type: text
+              label: Angebote
+          fsprache:
+              type: text
+              label: Sprache
+          fartderorganisation:
+              type: text
+              label: Art der Organisation
+          fzeige:
+              type: text
+              label: Zeige
+  midright:
+    width: 1/3
+    sections:
+      fields6:
+        type: fields
+        fields:
+          info6:
+            label:
+            type: info
+            text: Filter Container Buttons
+          fsearch:
+              type: text
+              label: Search
+          freset:
+              type: text
+              label: Reset
+
+
+
+
 
 
 

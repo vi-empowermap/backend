@@ -1,0 +1,39 @@
+title: Error
+
+
+columns:
+  topleft:
+    width: 1/2
+    sections:
+      fields8:
+        type: fields
+        fields:
+          info:
+            type: info
+            text: 404 page
+          etitle:
+            label: 404 title
+            type: text
+          esubtitle:
+            label: 404 sub title
+            type: text
+          etext:
+            label: 404 text
+            type: textarea
+          ebutton:
+            label: 404 button text
+            type: text
+  topright:
+    width: 1/2
+    sections:
+      fields9:
+        type: fields
+        fields:
+          info2:
+            type: info
+            text: Loading Page
+          loadingtext:
+            type: text
+            label: Loading Page Text
+
+

@@ -78,6 +78,46 @@ Centerbtntext: Center
 
 ----
 
+Fbundesland: Bundesland
+
+----
+
+Fthemenschwerpunkt: Nach Themenschwerpunkt
+
+----
+
+Ftag: Nach Tags
+
+----
+
+Fzielgroup: Zielgruppe
+
+----
+
+Fangebote: Angebote
+
+----
+
+Fsprache: Sprache
+
+----
+
+Fartderorganisation: Art der Organisation
+
+----
+
+Fzeige: Zeige
+
+----
+
+Fsearch: Search
+
+----
+
+Freset: Reset
+
+----
+
 Hometitle: 
 
 ----

@@ -20,7 +20,7 @@ RewriteEngine on
 # In some environments it's necessary to
 # set the RewriteBase to:
 #
-# RewriteBase /
+RewriteBase /
 
 # block files and folders beginning with a dot, such as .git
 # except for the .well-known folder, which is used for Let's Encrypt and security.txt
@@ -68,9 +68,9 @@ Header always set Access-Control-Allow-Origin "*"
 # Header always set Access-Control-Allow-Origin "http://localhost:3000/"
 Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, PATCH, PUT"
 Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
-
-
 </IfModule>
+
+
 # 1.Apache Handles Preflight Request:
 <IfModule mod_rewrite.c>
     RewriteEngine On
