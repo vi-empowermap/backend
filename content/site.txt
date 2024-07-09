@@ -2,7 +2,7 @@ Title: Site Title
 
 ----
 
-Signupon: false
+Signupon: true
 
 ----
 
@@ -10,7 +10,7 @@ Randomcode: 4ms0bnZzkL
 
 ----
 
-Limitcount: 1000
+Limitcount: 3
 
 ----
 

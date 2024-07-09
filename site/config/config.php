@@ -15,6 +15,15 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PATCH, PUT");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
+// Kirby::plugin('yourname/cors', [
+//     'hooks' => [
+//         'file.render:before' => function ($file, $options) {
+//             if (in_array($file->extension(), ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
+//                 header('Access-Control-Allow-Origin: *');
+//             }
+//         }
+//     ]
+// ]);
 /**
  * The config file is optional. It accepts a return array with config options
  * Note: Never include more than one return statement, all options go within this single return array
@@ -38,6 +47,21 @@ return [
     'kql' => [
         'auth' => true
     ],
+    'hooks' => [
+        'user.create:before' => function ($user, $input) {
+            $kirby = kirby();
+            $currentUser = $kirby->user();
+            
+            // Check if the current user is SubSystemAdmin
+            if ($currentUser->role()->name() === 'subsystemadmin') {
+                $allowedRoles = ['orga']; // Replace 'role1', 'role2' with the specific roles
+
+                if (!in_array($input['role'], $allowedRoles)) {
+                    throw new Exception('You are not allowed to create this user role Sub-System-Admin can create only Orga User');
+                }
+            }
+        }
+    ]
     
     
 ];
