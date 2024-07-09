@@ -47,6 +47,7 @@ return [
     'kql' => [
         'auth' => true
     ],
+   
     'hooks' => [
         'user.create:before' => function ($user, $input) {
             $kirby = kirby();
@@ -56,12 +57,39 @@ return [
             if ($currentUser->role()->name() === 'subsystemadmin') {
                 $allowedRoles = ['orga']; // Replace 'role1', 'role2' with the specific roles
 
+               
                 if (!in_array($input['role'], $allowedRoles)) {
                     throw new Exception('You are not allowed to create this user role Sub-System-Admin can create only Orga User');
                 }
             }
-        }
-    ]
+        },
+        // 'blueprint' => function ($blueprint, $name) {
+        //     $kirby = kirby();
+        //     $user = $kirby->user();
+
+        //     // Only modify the 'site' blueprint
+        //     if ($name === 'site' && $user) {
+        //         if ($user->role()->name() === 'subsystemadmin') {
+        //             // Remove the restrictedField for subsystemadmin
+        //             unset($blueprint['fields']['randomcode']);
+        //         } elseif ($user->role()->name() === 'admin') {
+        //             // Remove the subsystemAdminField for admin
+        //             unset($blueprint['fields']['subsystemAdminField']);
+        //         }
+        //     }
+
+        //     return $blueprint;
+        // }
+
+    ],
     
+    // 'panel' => [
+    //     'install' => function () {
+    //         $user = kirby()->user();
+    //         if ($user && $user->role()->name() === 'subsystemadmin') {
+    //             echo '<link rel="stylesheet" href="' . url('assets/css/custom-panel.css') . '">';
+    //         }
+    //     }
+    // ],
     
 ];
