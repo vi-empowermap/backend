@@ -78,22 +78,16 @@ columns:
             theme: positive
             text: |
               Password Reset Info
-            when:
-              publicbtn: true
           customquestion:
             width: 1/2
             label: What is your question
             type: text
             required: true
-            when:
-              publicbtn: true
           infopassword:
             width: 1/2
             label: Answer
             type: text
             required: true
-            when:
-              publicbtn: true
 
   left:
     width: 1/1
@@ -104,8 +98,6 @@ columns:
         theme: positive
         text: |
           Name der Organisation oder des Projekts
-        when:
-          publicbtn: true
       # orgaimage:
       #   width: 1/2
       #   label: Image der Organisation
@@ -118,34 +110,35 @@ columns:
       #     publicbtn: true
       organame:
         width: 1/2
-        label: Name der Organisation
+        label: Name der Organisation(Langform)
         type: text
         minlength: 3
         maxlength: 100
         help: Min.3 Max.100
         required: true
-        when:
-          publicbtn: true
+      organameshortform:
+        width: 1/2
+        label: Name der Organisation(Kurzform)
+        type: text
+        minlength: 1
+        maxlength: 8
+        help: Min.1 Max.8
+        required: true
       aboutorga:
         width: 1/2
         label: Beschreibung
         type: textarea
         required: true
-        when:
-          publicbtn: true
       lokalorga:
         label: Keine Verortung
         type: toggle
         default: false
         help: ich wünsche keine Verortung
-        when:
-          publicbtn: true
       location: # locator plugin
         type: locator
         help: (Optional Data)
         when:
           lokalorga: false
-          publicbtn: true
       street:
         label: Street
         type: text
@@ -153,7 +146,6 @@ columns:
         width: 2/3
         when:
           lokalorga: false
-          publicbtn: true
       zip:
         label: ZIP
         type: text
@@ -161,7 +153,6 @@ columns:
         help: (Optional Data)
         when:
           lokalorga: false
-          publicbtn: true
       city:
         label: Stadt
         type: text
@@ -169,7 +160,6 @@ columns:
         help: (Optional Data)
         when:
           lokalorga: false
-          publicbtn: true
       bundesland:
         label: Bundesland
         width: 1/2
@@ -177,7 +167,6 @@ columns:
         help: This data is essential for counting organizations on the map.
         when:
           lokalorga: false
-          publicbtn: true
         options:
           a: Bayern
           b: Niedersachsen
