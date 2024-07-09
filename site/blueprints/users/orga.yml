@@ -287,6 +287,7 @@ columns:
         required: true
         when:
           publicbtn: true
+        accept: options
         options:
           a: Bildung & Professionalisierung
           b: Kultur und Kunst
@@ -306,6 +307,7 @@ columns:
         type: select
         width: 1/2
         required: true
+        accept: options
         when:
           publicbtn: true
         options:
@@ -322,6 +324,7 @@ columns:
         required: true
         when:
           publicbtn: true
+        accept: options
         options:
           a: Afrikanische/Schwarze Kinder & Jugendliche
           b: Afrikanische/Schwarze Frauen
@@ -353,6 +356,7 @@ columns:
         required: true
         when:
           publicbtn: true
+        accept: options
         options:
           a: Deutsch
           b: Englisch
@@ -367,6 +371,7 @@ columns:
         required: true
         when:
           publicbtn: true
+        accept: options
         options:
           a: Workshops und Seminare
           b: Veranstaltungen und Events
