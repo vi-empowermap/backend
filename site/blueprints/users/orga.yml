@@ -98,16 +98,15 @@ columns:
         theme: positive
         text: |
           Name der Organisation oder des Projekts
-      # orgaimage:
-      #   width: 1/2
-      #   label: Image der Organisation
-      #   type: files
-      #   max: 1
-      #   uploads: image
-      #   help: Optional data
-      #   required: false
-      #   when:
-      #     publicbtn: true
+      orgaimage:
+        width: 1/2
+        layout: cards
+        label: Organisation LOGO
+        type: files
+        max: 1
+        uploads: image
+        help: Optional data
+        required: false
       organame:
         width: 1/2
         label: Name der Organisation(Langform)
@@ -195,52 +194,44 @@ columns:
         theme: positive
         text: |
           Kontakt
-        when:
-          publicbtn: true
       email_p:
         width: 1/4
         label: Email
         type: email
         required: true
-        when:
-          publicbtn: true
       contactnummber:
         width: 1/4
         label: Telefonnummer
         type: tel
         help: (Optional Data)
-        when:
-          publicbtn: true
       commentforcontact:
         width: 1/4
         label: Kommentar zum Kontakt
         type: text
-        when:
-          publicbtn: true
       website:
         width: 1/4
         label: Website
         type: url
         required: true
-        when:
-          publicbtn: true
       social:
         label: Social Media link
         type: structure
-        when:
-          publicbtn: true
         fields:
           notfound:
+            label: Title Toggle
             width: 1/4
             type: toggle
             default: false
+            text:
+              - Title
+              - Custom Title
           medianame:
             width: 3/4
             label: Title
             type: select
             when:
               notfound: false
-            required: true
+            required: false
             options:
               a: Facebook
               b: YouTube
@@ -251,7 +242,7 @@ columns:
               g: X(Twitter)
           medianamecustom:
             width: 3/4
-            label: Write your Social Media
+            label: Custom Title
             type: text
             when:
               notfound: true
@@ -267,22 +258,18 @@ columns:
         theme: positive
         text: |
           Filteroptionen
-        when:
-          publicbtn: true
       themenschwerpunkt:
         label: Themenschwerpunkt
         type: tags
         width: 1/2
         required: true
-        when:
-          publicbtn: true
         accept: options
         options:
           a: Bildung & Professionalisierung
-          b: Kultur und Kunst
-          c: Gesundheit und Soziales
+          b: Kultur & Kunst
+          c: Gesundheit & Soziales
           d: Rech
-          e: Politik & und Advocacy
+          e: Politik & Advocacy
           f: Community-Building
           g: Beratung
           h: Wissenschaft
@@ -297,44 +284,45 @@ columns:
         width: 1/2
         required: true
         accept: options
-        when:
-          publicbtn: true
         options:
           a: Verein
           b: Initiative
           c: NGO (Nichtregierungsorganisation)
-          d: Projektgruppe
+          d: Projekt
           e: Bildungseinrichtung
           f: Kultureinrichtung
+          g: Verbund/Verband
+          h: Kollektiv
+          i: Weitere
       zielgruppe:
         label: Zielgruppe
         type: tags
         width: 1/2
         required: true
-        when:
-          publicbtn: true
         accept: options
         options:
-          a: Afrikanische/Schwarze Kinder & Jugendliche
+          a: "Afrikanische/Schwarze Kinder & Jugendliche"
           b: Afrikanische/Schwarze Frauen
-          c: Afrikanische/Schwarze FLINTA(*)
-          d: Afrikanische/Schwarze LSBTQIA+
-          e: "Afrikanische/Schwarze Geflüchtete & Migrant*innen"
-          f: Afrikanische/Schwarze Menschen mit Behinderungen/chronischen Erkrankungen
-          g: "Afrikanische/Schwarze Menschen höheren Alters und Senior*innen"
-          h: Eltern/Bezugspersonen/Pflegeverantwortliche Afrikanischer/Schwarzer Kinder
-          i: Pflegeverantwortliche/Angehörige Afrikanischer/Schwarzer Personen
-          j: Afrikanische/Schwarze Fachkräfte und Freischaffende
-          k: Familien mit Afrikanischen/Schwarzen Mitgliedern
-          l: Weitere
+          c: Afrikanische/Schwarze Männer
+          d: "Afrikanische/Schwarze FLINTA(*)"
+          e: Afrikanische/Schwarze LSBTQIA+
+          f: "Afrikanische/Schwarze Geflüchtete & Migrant*innen"
+          g: Afrikanische/Schwarze Studierenden
+          h: Afrikanische/Schwarze Auszubildende
+          i: Afrikanische/Schwarze Menschen mit Behinderungen/chronischen Erkrankungen
+          j: "Afrikanische/Schwarze Menschen höheren Alters und Senior*innen"
+          k: Eltern/Bezugspersonen/Pflegeverantwortliche Afrikanischer/Schwarzer Kinder
+          l: "Pflegeverantwortliche/Angehörige Afrikanischer/Schwarzer Personen"
+          m: "Afrikanische/Schwarze Fachkräfte und Freischaffende"
+          o: Familien mit Afrikanischen/ Schwarzen Mitgliedern
+          p: Weitere
 
       onlineresourcen:
         label: Verfügbarkeit von Online-Ressourcen
-        type: select
+        type: tags
         width: 1/2
+        accept: options
         required: true
-        when:
-          publicbtn: true
         options:
           web: Website vorhanden
           social: Social-Media-Präsenz (z. B. Facebook, Twitter, etc.)
@@ -343,8 +331,6 @@ columns:
         type: tags
         width: 1/2
         required: true
-        when:
-          publicbtn: true
         accept: options
         options:
           a: Deutsch
@@ -358,32 +344,30 @@ columns:
         type: tags
         width: 1/2
         required: true
-        when:
-          publicbtn: true
         accept: options
         options:
-          a: Workshops und Seminare
-          b: Veranstaltungen und Events
-          c: Forschungsprojekte
-          d: Publikationen und (Online-)Ressourcen/Materialien
-          e: Freizeitangebote
-          f: Nachhilfe
-          g: Sprachunterricht
-          h: Übersetzungen
-          i: Dolmetschung
-          j: Betreuung/Pflegedienste
-          k: Kinder- und Jugendbetreuung
-          l: Coaching / Supervision
-          m: Aus- und Weiterbildungen
-          o: Inputs und Vorträge
-          p: Networking
-
+          a: Workshops & Seminare
+          b: Veranstaltungen & Events
+          c: Beratungsdienste
+          d: Forschung
+          e: Publikationen & (Online-)Ressourcen/Materialien
+          f: Bibliothek/Archiv
+          g: Freizeitangebote
+          h: Nachhilfe
+          i: Sprachunterricht
+          j: Übersetzungen
+          k: Dolmetschung
+          l: Betreuung/Pflegedienste
+          m: Kinder- & Jugendbetreuung
+          o: Coaching/Supervision
+          p: Aus- & Weiterbildungen
+          q: Inputs & Vorträge
+          r: Networking
+          s: Weitere
       tagpool:
         label: Tags
         type: multiselect
         width: 1/2
-        when:
-          publicbtn: true
         options:
           type: query
           query: kirby.users.pluck("tags", ",", true)
@@ -392,8 +376,6 @@ columns:
         type: tags
         width: 1/2
         help: Special characters are not allowed here. EX) `~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/
-        when:
-          publicbtn: true
         fields:
           tagname:
             type: text
@@ -404,19 +386,15 @@ columns:
         type: select
         width: 1/2
         required: true
-        when:
-          publicbtn: true
         options:
           aktive: Aktive
           archiv: Archiv
 
       geltungsbereich:
         label: Geltungsbereich
-        type: select
+        type: tags
         width: 1/2
-        required: true
-        when:
-          publicbtn: true
+        accept: options
         options:
           lokal: Lokal
           kommunal: Kommunal
