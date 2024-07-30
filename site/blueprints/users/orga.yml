@@ -387,7 +387,7 @@ columns:
         width: 1/2
         required: true
         options:
-          aktive: Aktive
+          aktive: Aktiv
           archiv: Archiv
 
       geltungsbereich:
