@@ -163,6 +163,7 @@ columns:
         label: Bundesland
         width: 1/2
         type: select
+        required: true
         help: This data is essential for counting organizations on the map.
         when:
           lokalorga: false
@@ -268,7 +269,7 @@ columns:
           a: Bildung & Professionalisierung
           b: Kultur & Kunst
           c: Gesundheit & Soziales
-          d: Rech
+          d: Recht
           e: Politik & Advocacy
           f: Community-Building
           g: Beratung

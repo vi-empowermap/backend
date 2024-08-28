@@ -1,0 +1,57 @@
+title: Information
+
+
+columns:
+  about:
+    width: 1/1
+    fields:
+      info:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          Title Text
+      about_title:
+        width: 1/1
+        label: About Title
+        type: text
+        required: true
+      about_text:
+        width: 1/1
+        label: About Text
+        type: textarea
+        required: true
+  contributor:
+    width: 1/1
+    fields:
+      info3:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          Title Text
+      contributors:
+        type: tags
+        required: true
+        accept: options
+        options: query
+        query:
+          fetch: kirby.users.filterBy('role', 'orga')
+          text: "{{ user.email }}"
+          value: "{{ user.id }}"
+
+  contact:
+    width: 1/1
+    fields:
+      info2:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          Title Text
+      contact_title:
+        width: 1/1
+        label: Contact Title
+        type: text
+        required: true
+

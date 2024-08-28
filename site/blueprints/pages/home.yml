@@ -96,6 +96,9 @@ columns:
           verortungbtntext:
             label: Ohne Verortung Button Text
             type: text
+          mitverortungbtntext:
+            label: Mit Verortung Button Text
+            type: text
           centerbtntext:
             label: Center Button Text
             type: text
