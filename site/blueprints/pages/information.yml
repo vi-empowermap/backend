@@ -31,14 +31,20 @@ columns:
         text: |
           Title Text
       contributors:
-        type: tags
-        required: true
-        accept: options
-        options: query
-        query:
-          fetch: kirby.users.filterBy('role', 'orga')
-          text: "{{ user.email }}"
-          value: "{{ user.id }}"
+        width: 1/1
+        layout: cards
+        label: logo
+        type: files
+        uploads: image
+        help: Optional data
+        required: false
+        # required: true
+        # accept: options
+        # options: query
+        # query:
+        #   fetch: kirby.users.filterBy('role', 'orga')
+        #   text: "{{ user.email }}"
+        #   value: "{{ user.id }}"
 
   contact:
     width: 1/1

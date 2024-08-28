@@ -1,0 +1,5 @@
+Uuid: wXV32FMHNRpXZgVm
+
+----
+
+Template: image

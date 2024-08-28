@@ -10,7 +10,10 @@ About-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feli
 
 ----
 
-Contributors: jfO2KaTX, fvXBwV2R, W1g0bqxV
+Contributors:
+
+- file://EbOdivStvHmzTP0q
+- file://yojkY0eiVibWhBV4
 
 ----
 
