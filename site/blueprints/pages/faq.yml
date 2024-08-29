@@ -1,0 +1,33 @@
+title: Faq
+
+
+columns:
+  faqq:
+    width: 1/1
+    fields:
+      info:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          About
+      faq_title:
+        width: 1/1
+        label: About Title
+        type: text
+        required: true
+      faq_list:
+        width: 1/1
+        label: Faq List
+        type: structure
+        fields:
+          faq_title:
+            label: Question
+            width: 1/1
+            type: text
+          faq_answer:
+            label: Answer
+            width: 1/1
+            type: textarea
+
+

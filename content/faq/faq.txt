@@ -1,0 +1,17 @@
+Title: Faq
+
+----
+
+Faq-title: FAQ
+
+----
+
+Faq-list:
+
+- 
+  faq_title: ""
+  faq_answer: ""
+
+----
+
+Uuid: wkyAYPpF5F0GDE9Y

@@ -10,7 +10,7 @@ columns:
         label: info
         theme: positive
         text: |
-          Title Text
+          About
       about_title:
         width: 1/1
         label: About Title
@@ -29,7 +29,10 @@ columns:
         label: info
         theme: positive
         text: |
-          Title Text
+          Contributor
+      contributors_title:
+        type: text
+        label: Contributor Title
       contributors:
         width: 1/1
         layout: cards
@@ -54,10 +57,51 @@ columns:
         label: info
         theme: positive
         text: |
-          Title Text
+          Contact
       contact_title:
         width: 1/1
         label: Contact Title
         type: text
+        required: true
+      contact_email:
+        width: 1/2
+        label: Padlas Email
+        type: email
+        placeholder: example@example.com
+      contact_phone:
+        width: 1/2
+        label: Padlas Phone
+        type: tel
+        placeholder: +491231234123
+      contact_street:
+        width: 1/1
+        label: Padlas address street
+        type: text
+      contact_zip:
+        width: 1/2
+        label: Padlas address zip
+        type: text
+      contact_city:
+        width: 1/2
+        label: Padlas address city
+        type: text
+  imprint:
+    width: 1/1
+    fields:
+      info5:
+        type: info
+        label: info
+        theme: positive
+        text: |
+          Imprint
+      imprint_title:
+        width: 1/1
+        label: Imprint Title
+        type: text
+        required: true
+      imprint_text:
+        width: 1/1
+        label: Imprint Text
+        type: textarea
         required: true
 
