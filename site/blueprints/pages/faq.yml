@@ -10,7 +10,7 @@ columns:
         label: info
         theme: positive
         text: |
-          About
+          FAQ(frequently asked question)
       faq_title:
         width: 1/1
         label: About Title

@@ -18,6 +18,8 @@ columns:
           introtext:
             type: textarea
             label: intro text
+            maxlength: 500
+            help: max. 500 characters
           introbtn:
             type: text
             label: intro start button text
