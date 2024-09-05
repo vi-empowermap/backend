@@ -97,7 +97,7 @@ columns:
         theme: positive
         text: Organization Information
       orgaimage:
-        width: 1/2
+        width: 1/3
         layout: cards
         label: Logo of the organization
         type: files
@@ -106,7 +106,7 @@ columns:
         help: Optional data
         required: false
       organame:
-        width: 1/2
+        width: 1/3
         label: Name of the organization (Full form)
         type: text
         minlength: 3
@@ -114,7 +114,7 @@ columns:
         help: Min.3 Max.100
         required: true
       organameshortform:
-        width: 1/2
+        width: 1/3
         label: Name of the organization (Short form)
         type: text
         minlength: 1
@@ -122,8 +122,8 @@ columns:
         help: Min.1 Max.8
         required: true
       aboutorga:
-        width: 1/2
-        label: Beschreibung
+        width: 1/1
+        label: Description
         type: textarea
         required: true
       info5:
@@ -142,7 +142,7 @@ columns:
         type: info
         label: 
         theme: passive
-        text: Step 1
+        text: "Step 1: Your written address"
         when:
           lokalorga: false
       street:
@@ -195,7 +195,7 @@ columns:
         type: info
         label: 
         theme: passive
-        text: Step 2
+        text: "Step 2: Position your location on the map"
         when:
           lokalorga: false
       location: # locator plugin
@@ -274,7 +274,7 @@ columns:
         type: info
         label: 
         theme: positive
-        text: Please add tags to your profile to help others find and identify your content more easily.
+        text: Please add tags to your profile to help others find
       themenschwerpunkt:
         label: Main topic
         type: tags
@@ -344,7 +344,7 @@ columns:
           web: Website vorhanden
           social: Social-Media-Präsenz (z. B. Facebook, Twitter, etc.)
       sprachunterstutzung:
-        label: Language support
+        label: "Language support (Which languages does your organization support?)"
         type: tags
         width: 1/2
         required: true
