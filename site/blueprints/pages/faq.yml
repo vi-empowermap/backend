@@ -7,18 +7,17 @@ columns:
     fields:
       info:
         type: info
-        label: info
+        label: 
         theme: positive
-        text: |
-          FAQ(frequently asked question)
+        text: FAQ(frequently asked question)
       faq_title:
         width: 1/1
-        label: About Title
+        label: Title
         type: text
         required: true
       faq_list:
         width: 1/1
-        label: Faq List
+        label: Write Frequently Asked Questions (FAQ)
         type: structure
         fields:
           faq_title:
