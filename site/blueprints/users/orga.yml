@@ -64,23 +64,22 @@ columns:
         type: fields
         fields:
           keyinfo:
-            label: secret key
+            label: 
             type: text
             disabled: true
           publicbtn:
             label: Public
             type: toggle
             default: false
-            help: to Public
+            help: If you would like to display your organization on our website, please set your visibility to public.
           info:
             type: info
-            label: info
+            label: 
             theme: positive
-            text: |
-              Password Reset Info
+            text: Password reset information
           customquestion:
             width: 1/2
-            label: What is your question
+            label: What is your question?
             type: text
             required: true
           infopassword:
@@ -94,14 +93,13 @@ columns:
     fields:
       info2:
         type: info
-        label: info
+        label: 
         theme: positive
-        text: |
-          Name der Organisation oder des Projekts
+        text: Organization Information
       orgaimage:
         width: 1/2
         layout: cards
-        label: Organisation LOGO
+        label: Logo of the organization
         type: files
         max: 1
         uploads: image
@@ -109,7 +107,7 @@ columns:
         required: false
       organame:
         width: 1/2
-        label: Name der Organisation(Langform)
+        label: Name of the organization (Full form)
         type: text
         minlength: 3
         maxlength: 100
@@ -117,7 +115,7 @@ columns:
         required: true
       organameshortform:
         width: 1/2
-        label: Name der Organisation(Kurzform)
+        label: Name of the organization (Short form)
         type: text
         minlength: 1
         maxlength: 8
@@ -128,14 +126,23 @@ columns:
         label: Beschreibung
         type: textarea
         required: true
+      info5:
+        type: info
+        label: 
+        theme: positive
+        text: Do you want to be located?
       lokalorga:
-        label: Keine Verortung
+        label: 
         type: toggle
         default: false
-        help: ich wünsche keine Verortung
-      location: # locator plugin
-        type: locator
-        help: (Optional Data)
+        text: 
+          - "Yes"
+          - "No"
+      info5-1:
+        type: info
+        label: 
+        theme: passive
+        text: Step 1
         when:
           lokalorga: false
       street:
@@ -153,14 +160,14 @@ columns:
         when:
           lokalorga: false
       city:
-        label: Stadt
+        label: City
         type: text
         width: 1/2
         help: (Optional Data)
         when:
           lokalorga: false
       bundesland:
-        label: Bundesland
+        label: State
         width: 1/2
         type: select
         required: true
@@ -184,6 +191,20 @@ columns:
           n: Berlin
           o: Hamburg
           p: Bremen
+      info5-2:
+        type: info
+        label: 
+        theme: passive
+        text: Step 2
+        when:
+          lokalorga: false
+      location: # locator plugin
+        type: locator
+        help: If you would like to be located, this information is required
+        required: true
+        label: Pin your location on the map
+        when:
+          lokalorga: false
 
 
   right:
@@ -191,31 +212,27 @@ columns:
     fields:
       info3:
         type: info
-        label: info
+        label: 
         theme: positive
-        text: |
-          Kontakt
+        text: Contact information
       email_p:
         width: 1/4
         label: Email
         type: email
-        required: true
       contactnummber:
         width: 1/4
-        label: Telefonnummer
+        label: Phone number
         type: tel
-        help: (Optional Data)
       commentforcontact:
         width: 1/4
-        label: Kommentar zum Kontakt
+        label: Comment regarding the contact
         type: text
       website:
         width: 1/4
         label: Website
         type: url
-        required: true
       social:
-        label: Social Media link
+        label: Social media handles
         type: structure
         fields:
           notfound:
@@ -255,12 +272,11 @@ columns:
     fields:
       info4:
         type: info
-        label: Filter
+        label: 
         theme: positive
-        text: |
-          Filteroptionen
+        text: Please add tags to your profile to help others find and identify your content more easily.
       themenschwerpunkt:
-        label: Themenschwerpunkt
+        label: Main topic
         type: tags
         width: 1/2
         required: true
@@ -280,7 +296,7 @@ columns:
           l: Religion
           m: Flucht & Migration
       artderorganisation:
-        label: Art der Organisation
+        label: Type of organization
         type: select
         width: 1/2
         required: true
@@ -296,7 +312,7 @@ columns:
           h: Kollektiv
           i: Weitere
       zielgruppe:
-        label: Zielgruppe
+        label: Target audience
         type: tags
         width: 1/2
         required: true
@@ -319,7 +335,7 @@ columns:
           p: Weitere
 
       onlineresourcen:
-        label: Verfügbarkeit von Online-Ressourcen
+        label: Availability of online resources
         type: tags
         width: 1/2
         accept: options
@@ -328,7 +344,7 @@ columns:
           web: Website vorhanden
           social: Social-Media-Präsenz (z. B. Facebook, Twitter, etc.)
       sprachunterstutzung:
-        label: Sprachunterstützung
+        label: Language support
         type: tags
         width: 1/2
         required: true
@@ -341,7 +357,7 @@ columns:
           e: Portugiesisch
           f: Hausa
       angebote:
-        label: Angebote
+        label: Services or Offers
         type: tags
         width: 1/2
         required: true
@@ -383,16 +399,16 @@ columns:
           # query: site.tags.toStructure.pluck("tagname", ",", true)
 
       archivoraktiv:
-        label: Archiv oder Aktiv
+        label: Archive or Active
         type: select
         width: 1/2
         required: true
         options:
-          aktive: Aktiv
-          archiv: Archiv
+          aktive: Active
+          archiv: Archive
 
       geltungsbereich:
-        label: Geltungsbereich
+        label: Scope or Area of coverage
         type: tags
         width: 1/2
         accept: options
