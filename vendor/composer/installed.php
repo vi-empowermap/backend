@@ -3,7 +3,7 @@
         'name' => 'getkirby/plainkit',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '2130cf19e2b7b2a52b1d1b3f8809fa40e0f61c3b',
+        'reference' => '6c8aeca828b19a34949335cb4622103fc1ddb333',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -103,7 +103,7 @@
         'getkirby/plainkit' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '2130cf19e2b7b2a52b1d1b3f8809fa40e0f61c3b',
+            'reference' => '6c8aeca828b19a34949335cb4622103fc1ddb333',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -34,6 +34,10 @@ Stadtinfo: stadt
 
 ----
 
+List-button-text: Zeige Organisationen ohne Verortung
+
+----
+
 Languagesupporttext: Sprachunterstützung
 
 ----
@@ -67,6 +71,10 @@ Socialmediatext: Social Media
 ----
 
 Minimaptitle: Überblick Bund
+
+----
+
+Minimap-geolocation-button: Standortbestimmung erlauben
 
 ----
 
@@ -119,6 +127,22 @@ Fsearch: Search
 ----
 
 Freset: Reset
+
+----
+
+Notfound-errormessage-title: Page not found
+
+----
+
+Notfound-errormessage: Oops! The page you are looking for does not exist. It might have been moved or delete
+
+----
+
+Notfound-button: Back to home
+
+----
+
+Notfound-location: Durch Nutzer verweigert
 
 ----
 

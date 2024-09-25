@@ -48,6 +48,9 @@ columns:
           stadtinfo:
             label: Stadt
             type: text
+          list_button_text:
+            type: text
+            label: Button Text in List Wrapper (🟢 new update)
   topright:
     width: 1/3
     sections:
@@ -91,9 +94,12 @@ columns:
           info4:
             label:
             type: info
-            text: Mini Map Text
+            text: Map Bottom Navigation
           minimaptitle:
             label: MiniMap Title
+            type: text
+          minimap_geolocation_button:
+            label: Minimap location button label (🟢 new update)
             type: text
           verortungbtntext:
             label: Ohne Verortung Button Text
@@ -154,6 +160,55 @@ columns:
           freset:
               type: text
               label: Reset
+  bottomnav_gap:
+    width: 1/1
+    sections:
+      fields7:
+        type: fields
+        fields:
+          info7:
+            label:
+            type: info
+            text: Error Messages
+  bottomnav_left:
+    width: 1/3
+    sections:
+      fields8:
+        type: fields
+        fields:
+          info8:
+            label:
+            type: info
+            text: Not Found Page Error Message
+          notfound_errormessage_title:
+            type: text
+            label: "Error Message title (🟢 new update)"
+            help: zb. Page not found
+          notfound_errormessage:
+            type: textarea
+            label: "Error Message text (🟢 new update)"
+            help: zb. Oops! The page you are looking for does not exist. It might have been moved or delete
+          notfound_button:
+            type: text
+            label: "Button Text (🟢 new update)"
+            help: zb. Back to home
+  bottomnav_mid:
+    width: 1/3
+    sections:
+      fields9:
+        type: fields
+        fields:
+          info9:
+            label:
+            type: info
+            text: Mini Map Error Message
+          notfound_location:
+            type: text
+            label: Not Found GeoLocaiton (🟢 new update)
+            help: zb. Durch Nutzer verweigert
+        
+ 
+
 
 
 

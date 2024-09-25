@@ -7,7 +7,7 @@ columns:
     fields:
       info:
         type: info
-        label: info
+        label: 
         theme: positive
         text: |
           About
@@ -26,7 +26,7 @@ columns:
     fields:
       info3:
         type: info
-        label: info
+        label: 
         theme: positive
         text: |
           Contributor
@@ -54,7 +54,7 @@ columns:
     fields:
       info2:
         type: info
-        label: info
+        label: 
         theme: positive
         text: |
           Contact
@@ -90,7 +90,7 @@ columns:
     fields:
       info5:
         type: info
-        label: info
+        label: 
         theme: positive
         text: |
           Imprint
@@ -104,4 +104,24 @@ columns:
         label: Imprint Text
         type: textarea
         required: true
+  einfachersprache:
+    width: 1/1
+    fields:
+      info6:
+        type: info
+        label: 
+        theme: positive
+        text: |
+          Einfacher Sprache
+      einfacher_title:
+        width: 1/1
+        label: Einfacher Sprache Title
+        type: text
+        required: true
+      einfacher_text:
+        width: 1/1
+        label: Einfacher Sprache Text
+        type: textarea
+        required: true
+      
 

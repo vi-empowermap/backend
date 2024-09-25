@@ -14,7 +14,7 @@ Limitcount: 5
 
 ----
 
-Infototalcount: 3
+Infototalcount: 4
 
 ----
 

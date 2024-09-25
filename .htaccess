@@ -81,9 +81,7 @@ AddOutputFilterByType DEFLATE application/x-javascript
 # set security headers in all responses
 
 <IfModule mod_headers.c>
-<!-- <FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
-        Header set Access-Control-Allow-Origin "*"
-    </FilesMatch> -->
+
 
 # serve files as plain text if the actual content type is not known
 
