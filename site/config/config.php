@@ -1,19 +1,23 @@
 <?php
 // 2.Handling Preflight Requests in PHP
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    header("Access-Control-Allow-Origin: *");
-    // header("Access-Control-Allow-Origin: http://localhost:3000");
+    // header("Access-Control-Allow-Origin: *");
+    // header("Access-Control-Allow-Origin: https://padlas.de");
+    header("Access-Control-Allow-Origin: http://localhost:3000");
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PATCH, PUT");
     header("Access-Control-Allow-Headers: Content-Type, Authorization");
+    header("Access-Control-Allow-Credentials: true");
     http_response_code(200);
     exit(0);
 }
 // 4.Setting Headers
 // Existing PHP logic
-header("Access-Control-Allow-Origin: *");
 // header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Origin: https://padlas.de");
+header("Access-Control-Allow-Origin: http://localhost:3000");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PATCH, PUT");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Credentials: true");
 
 // Kirby::plugin('yourname/cors', [
 //     'hooks' => [

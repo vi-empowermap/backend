@@ -92,12 +92,13 @@ Header set X-Content-Type-Options "nosniff"
 
 # 3.Setting Headers
 
-Header always set Access-Control-Allow-Origin "*"
+# Header always set Access-Control-Allow-Origin "*"
 
 # Header always set Access-Control-Allow-Origin "<http://localhost:3000/>"
-
+Header always set Access-Control-Allow-Origin "https://padlas.de"
 Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS, PATCH, PUT"
 Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+Header always set Access-Control-Allow-Credentials "true"
 </IfModule>
 
 # 1.Apache Handles Preflight Request
